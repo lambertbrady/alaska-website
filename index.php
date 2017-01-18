@@ -8,6 +8,7 @@
 
 <body>
     <?php include 'header.php'?>
+    <?php include 'hero.php'?>
         <div id="main">
             <div class="wrapper wrapper-welcome">
                 <div class="welcome text-primary-lightBackground">
