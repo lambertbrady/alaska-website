@@ -4,8 +4,7 @@
     <title> Lambert Wilderness </title>
     <link rel="stylesheet" href="vendors/reset.css">
     <link rel="stylesheet" href="vendors/normalize.css">
-    <link rel="stylesheet" href="main.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular.min.js"></script>
+    <!--    <link rel="stylesheet" href="main.css">-->
 </head>
 
 <body>
