@@ -1,6 +1,10 @@
 <html>
 
-<head></head>
+<head>
+    <link rel="stylesheet" href="vendors/reset.css">
+    <link rel="stylesheet" href="vendors/normalize.css">
+    <link rel="stylesheet" href="header.css">
+</head>
 
 <body>
     <div id="header">
