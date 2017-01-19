@@ -28,7 +28,7 @@
                     </div>
                 </div>
                 <div class="gallery-flex">
-                    <a href="/Gallery">
+                    <a href="/gallery">
                         <div>
                             <div> </div>
                             <div> </div>
