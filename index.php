@@ -4,7 +4,7 @@
     <title> Lambert Wilderness </title>
     <link rel="stylesheet" href="vendors/reset.css">
     <link rel="stylesheet" href="vendors/normalize.css">
-    <!--    <link rel="stylesheet" href="main.css">-->
+    <link rel="stylesheet" href="main.css">
 </head>
 
 <body>
