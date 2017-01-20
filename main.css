@@ -107,3 +107,9 @@ a {
     background-color: #FF3D00;
     color: #fff;
 }
+
+#main {
+    position: relative;
+    width: 100%;
+    padding: 2em;
+}
