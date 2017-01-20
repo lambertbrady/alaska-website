@@ -10,7 +10,7 @@
 <body>
     <div id="header" , class="flex-container">
         <div class="logo">
-            <a href="/index.php"> LOGO PLACEHOLDER (LAMBERT GUIDING SERVICE)</a>
+            <a href="/"> LOGO PLACEHOLDER (LAMBERT GUIDING SERVICE)</a>
         </div>
         <div class="flex-spacer"></div>
         <div class="nav">
