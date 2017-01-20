@@ -1,6 +1,11 @@
+.flex-container {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: flex-start;
+}
+
 #header {
     position: absolute;
-    display: block;
     width: 100%;
     padding: 2em;
 }
@@ -8,17 +13,20 @@
 .logo {
     position: relative;
     display: inline-block;
+    flex-grow: 0;
+}
+
+.flex-spacer {
+    flex-grow: 1;
 }
 
 .nav {
-    position: absolute;
-    display: inline-block;
-    right: 0;
-    padding-right: inherit;
+    position: relative;
+    flex-grow: 1;
 }
 
-.nav li {
-    display: inline-block;
+.nav ul {
+    justify-content: space-between;
 }
 
 .nav a {

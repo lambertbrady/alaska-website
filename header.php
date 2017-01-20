@@ -8,12 +8,13 @@
 </head>
 
 <body>
-    <div id="header">
+    <div id="header" , class="flex-container">
         <div class="logo">
             <a href="/index.php"> LOGO PLACEHOLDER (LAMBERT GUIDING SERVICE)</a>
         </div>
+        <div class="flex-spacer"></div>
         <div class="nav">
-            <ul>
+            <ul class="flex-container">
                 <li>
                     <a href="/about"> About </a>
                 </li>
