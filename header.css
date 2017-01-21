@@ -1,8 +1,14 @@
 /*DEFAULT CLASSES (add to main.css later)*/
 
-.flex-container {
+.flex-container-row {
     display: flex;
     flex-flow: row nowrap;
+    justify-content: flex-start;
+}
+
+.flex-container-col {
+    display: flex;
+    flex-flow: column nowrap;
     justify-content: flex-start;
 }
 
