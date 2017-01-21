@@ -9,7 +9,11 @@
 
 <body>
     <div id="header">
-        <div id="navbar" , class="flex-container-row">
+        <div class="hero">
+            <div class="hero-image"> </div>
+            <div class="hero-overlay"> </div>
+        </div>
+        <div class="navbar flex-container-row">
             <div class="logo">
                 <a href="/"> LOGO PLACEHOLDER (LAMBERT GUIDING SERVICE)</a>
             </div>
@@ -37,18 +41,16 @@
                 </ul>
             </div>
         </div>
-        <div id="hero">
-            <div class="wrapper-hero-image">
-                <div class="hero-image"> </div>
-            </div>
-            <div class="gradient"> </div>
-            <div class="hero-content">
-                <h3 class="text-primary-darkBackground">
-                    This is a header. Be sure to check out font sizes.
-                </h3>
-                <a href="/Gallery" class="btn btn-large btn-hero"> View More </a>
-            </div>
+        <!--
+        <div class="site-title">
+            <h3 class="text-primary-darkBackground">
+                This is a header. Be sure to check out font sizes.
+            </h3>
         </div>
+        <div class="btn scroll-down">
+            <a href="/Gallery" class="btn btn-large btn-hero"> View More </a>
+        </div>
+-->
     </div>
 </body>
 
