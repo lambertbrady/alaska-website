@@ -1,4 +1,4 @@
-/*DEFAULT CLASSES (add to main.css later)*/
+/*FLEX CLASSES (add to main.css later)*/
 
 .flex-container-row {
     display: flex;
@@ -12,11 +12,12 @@
     justify-content: flex-start;
 }
 
+.flex-spacer {
+    flex-grow: 1;
+}
 
-/*END DEFAULT CLASSES (add to main.css later)*/
 
-
-/*HEADER*/
+/*END FLEX CLASSES (add to main.css later)*/
 
 #header {
     position: relative;
@@ -24,40 +25,30 @@
     height: 100vh;
 }
 
-
-/*END HEADER*/
-
-
-/*HERO*/
-
-.hero {
-    position: absolute;
+#header > div {
     width: 100%;
     height: 100%;
 }
 
+.hero {
+    position: fixed;
+}
+
 .hero-image {
+    position: absolute;
     width: 100%;
     height: 100%;
-    background-image: url(Images/5.jpg);
+    /*    background-image: url(Images/5.jpg);*/
     background-size: cover;
     background-position: 0 65%;
 }
 
 .hero-overlay {
+    position: absolute;
     width: 100%;
     height: 100%;
-    background-color: aqua;
-    -webkit-background: linear-gradient(to bottom, rgba(0, 0, 0, .15), rgba(0, 0, 0, 0));
-    -moz-background: linear-gradient(to bottom, rgba(0, 0, 0, .15), rgba(0, 0, 0, 0));
     background: linear-gradient(to bottom, rgba(0, 0, 0, .15), rgba(0, 0, 0, 0));
 }
-
-
-/*END HERO*/
-
-
-/*NAVBAR*/
 
 .navbar {
     position: relative;
@@ -69,10 +60,6 @@
     position: relative;
     display: inline-block;
     flex-grow: 0;
-}
-
-.flex-spacer {
-    flex-grow: 1;
 }
 
 .nav {
@@ -120,5 +107,12 @@
     background-color: #FF3D00;
 }
 
+.page-title {
+    flex-grow: 1;
+    text-align: center;
+}
 
-/*END NAVBAR*/
+.scroll-button {
+    padding: 2em;
+    text-align: center;
+}
