@@ -3,6 +3,7 @@
 <head>
     <title> Lambert Wilderness </title>
     <link rel="stylesheet" href="main.css">
+    <link href="https://fonts.googleapis.com/css?family=Cabin:400,400italic,700" rel="stylesheet" type="text/css" media="all">
 </head>
 
 <body>
