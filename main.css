@@ -945,7 +945,12 @@ a {
 
 .page-title {
     flex-grow: 1;
-    text-align: center;
+}
+
+.page-title > * {
+    max-width: 65%;
+    margin: 0 auto;
+    text-shadow: 0px 0px 3px rgba(80, 80, 80, 1);
 }
 
 .scroll-button {
@@ -964,6 +969,7 @@ a {
     width: 100%;
     padding: 2em;
     background-color: #fff;
+    text-align: center;
 }
 
 
