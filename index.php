@@ -27,12 +27,12 @@
             </div>
             <div class="gallery">
                 <a href="/gallery">
-                    <div>
+                    <div class="flex-container-row">
                         <div> </div>
                         <div> </div>
                         <div> </div>
                     </div>
-                    <div>
+                    <div class="flex-container-row">
                         <div> </div>
                         <div> </div>
                         <div> </div>

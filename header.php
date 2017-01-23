@@ -39,14 +39,14 @@
             </div>
             <div class="page-title flex-container-col">
                 <div class="flex-spacer"></div>
-                <h3>
+                <h3 class="text-primary-darkBackground">
                     This is a header. Be sure to check out font sizes.
                 </h3>
-                <p>Neat</p>
+                <p class="text-secondary-darkBackground">Neat</p>
                 <div class="flex-spacer"></div>
             </div>
             <div class="scroll-button">
-                <a href="/Gallery" class="btn btn-large btn-hero"> Explore (below) </a>
+                <a href="/Gallery" class="btn btn-large"> Explore (below) </a>
             </div>
         </div>
     </div>
