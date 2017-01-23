@@ -962,7 +962,20 @@ a {
     position: relative;
     width: 100%;
     padding: 2em;
+    background-color: #fff;
 }
 
 
 /* END CONTENT ==========================================================================*/
+
+
+/*FOOTER*/
+
+#footer {
+    position: relative;
+    width: 100%;
+    padding: 2em;
+    background-color: #eee;
+}
+
+/* END FOOTER ==========================================================================*/

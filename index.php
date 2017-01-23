@@ -11,8 +11,8 @@
             <div class="wrapper wrapper-welcome">
                 <div class="welcome text-primary-lightBackground">
                     <h2 class="text-primary-lightBackground">
-                    Welcome to the Wilderness
-                </h2>
+                        Welcome to the Wilderness
+                    </h2>
                     <p>
                         Here's some great information to help you figure this out.
                     </p>
