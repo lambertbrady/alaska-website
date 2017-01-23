@@ -867,6 +867,7 @@ a {
 
 .hero {
     position: fixed;
+    z-index: -1;
 }
 
 .hero-image {
@@ -977,5 +978,6 @@ a {
     padding: 2em;
     background-color: #eee;
 }
+
 
 /* END FOOTER ==========================================================================*/
