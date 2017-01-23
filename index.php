@@ -9,7 +9,7 @@
 <body>
     <?php include 'header.php';?>
         <div id="content">
-            <div class="wrapper shadow-top shadow-bottom">
+            <div class="welcome-shadow wrapper">
                 <div class="welcome">
                     <h2 class="text-primary-lightBackground">
                         Welcome to the Wilderness

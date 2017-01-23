@@ -9,7 +9,7 @@
             <div class="hero-overlay"> </div>
         </div>
         <div class="flex-container-col">
-            <div class="navbar flex-container-row">
+            <div class="wrapper flex-container-row">
                 <div class="logo">
                     <a href="/"> LOGO PLACEHOLDER (LAMBERT GUIDING SERVICE)</a>
                 </div>

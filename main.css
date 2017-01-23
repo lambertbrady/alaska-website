@@ -830,6 +830,18 @@ a {
 /* END BUTTONS ==========================================================================*/
 
 
+/*GENERIC*/
+
+.wrapper {
+    position: relative;
+    width: 100%;
+    padding: 2em;
+}
+
+
+/* END GENERIC ==========================================================================*/
+
+
 /*FLEX*/
 
 .flex-container-row {
@@ -884,12 +896,6 @@ a {
     width: 100%;
     height: 100%;
     background: linear-gradient(to bottom, rgba(0, 0, 0, .15), rgba(0, 0, 0, 0));
-}
-
-.navbar {
-    position: relative;
-    width: 100%;
-    padding: 2em;
 }
 
 .logo {
@@ -971,24 +977,13 @@ a {
     background-color: #fff;
 }
 
-.wrapper {
-    position: relative;
-    width: 100%;
-    padding: 2em;
-}
-
-.shadow-top {
-    box-shadow: inset 0 15px 15px -15px rgba(0, 0, 0, 1)
-}
-
-.shadow-bottom {
-    box-shadow: inset 0 -10px 10px -10px rgba(0, 0, 0, .15);
+.welcome-shadow {
+    box-shadow: inset 0 15px 15px -15px rgba(0, 0, 0, 1), inset 0 -10px 10px -10px rgba(0, 0, 0, 1);
 }
 
 .welcome {
     position: relative;
     text-align: center;
-    /*        box-shadow: inset 0 15px 15px -15px rgba(0, 0, 0, .15), inset 0 -10px 10px -10px rgba(0, 0, 0, .15);*/
 }
 
 
