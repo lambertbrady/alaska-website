@@ -1,15 +1,10 @@
 <html>
 
-<head>
-    <link rel="stylesheet" href="vendors/reset.css">
-    <link rel="stylesheet" href="vendors/normalize.css">
-    <link rel="stylesheet" href="main.css">
-    <link rel="stylesheet" href="footer.css">
-</head>
+<head></head>
 
 <body>
     <div id="footer">
-        <div class="wrapper-aspectRatio">
+        <div class="wrapper">
             <div class="aspectRatio">
                 <div>
                     <div></div>
