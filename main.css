@@ -886,7 +886,7 @@ a {
     position: absolute;
     width: 100%;
     height: 100%;
-    /*    background-image: url(Images/5.jpg);*/
+    /*    background-image: url(images/5.jpg);*/
     background-size: cover;
     background-position: 0 65%;
 }
@@ -983,6 +983,7 @@ a {
 .welcome {
     position: relative;
     text-align: center;
+    padding: 3em 0 3em 0;
 }
 
 .gallery {
@@ -1001,29 +1002,29 @@ a {
 
 .gallery div:nth-of-type(1) div:nth-of-type(1) {
     flex-grow: 2;
-    background-image: url(Images/1.jpg);
+    background-image: url(images/1.jpg);
     background-position: 50% 80%;
 }
 
 .gallery div:nth-of-type(1) div:nth-of-type(2) {
-    background-image: url(Images/2.jpg);
+    background-image: url(images/2.jpg);
 }
 
 .gallery div:nth-of-type(1) div:nth-of-type(3) {
-    background-image: url(Images/10.jpg);
+    background-image: url(images/10.jpg);
 }
 
 .gallery div:nth-of-type(2) div:nth-of-type(1) {
-    background-image: url(Images/4.jpg);
+    background-image: url(images/4.jpg);
 }
 
 .gallery div:nth-of-type(2) div:nth-of-type(2) {
-    background-image: url(Images/8.jpg);
+    background-image: url(images/8.jpg);
 }
 
 .gallery div:nth-of-type(2) div:nth-of-type(3) {
     flex-grow: 2;
-    background-image: url(Images/7.jpg);
+    background-image: url(images/7.jpg);
 }
 
 .gallery div div:hover {
@@ -1037,9 +1038,6 @@ a {
 /*FOOTER*/
 
 #footer {
-    position: relative;
-    width: 100%;
-    padding: 2em;
     background-color: #eee;
 }
 

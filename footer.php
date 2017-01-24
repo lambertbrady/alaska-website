@@ -4,7 +4,7 @@
 
 <body>
     <div id="footer">
-        <div class="wrapper-aspectRatio">
+        <div class="wrapper">
             <div class="aspectRatio">
                 <div>
                     <div></div>
