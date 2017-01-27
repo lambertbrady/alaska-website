@@ -8,7 +8,7 @@
     <div id="footer">
         <div class="wrapper">
             <div class="nav-footer nav">
-                <ul class="flex-container-row">
+                <ul class="flex-container-row text-secondary-lightBackground">
                     <li>
                         <a href="/about"> About </a>
                     </li>

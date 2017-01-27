@@ -790,6 +790,22 @@ a {
     color: rgba(255, 255, 255, .7);
 }
 
+.text-primary-lightBackground * {
+    color: rgba(0, 0, 0, .87);
+}
+
+.text-primary-darkBackground * {
+    color: rgba(255, 255, 255, 1);
+}
+
+.text-secondary-lightBackground * {
+    color: rgba(0, 0, 0, .54);
+}
+
+.text-secondary-darkBackground * {
+    color: rgba(255, 255, 255, .7);
+}
+
 
 /* END TEXT ==========================================================================*/
 
@@ -1053,7 +1069,7 @@ a {
 }
 
 .nav-footer a {
-    color: #fff;
+    /*    color: #fff;*/
     text-decoration: underline;
 }
 
