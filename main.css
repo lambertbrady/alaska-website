@@ -744,7 +744,7 @@ h2 {
 h3 {
     font-size: 3.6em;
     font-weight: 600;
-    /*    margin: 0 0 30px 0;*/
+    margin: 0 0 30px 0;
 }
 
 p {
@@ -762,8 +762,9 @@ li {
 }
 
 a {
-    text-decoration: none;
     display: block;
+    font-size: 1.8em;
+    text-decoration: none;
     color: #FF3D00;
 }
 
@@ -791,6 +792,18 @@ a {
 
 
 /* END TEXT ==========================================================================*/
+
+
+/*POSITIONING*/
+
+.wrapper {
+    position: relative;
+    width: 100%;
+    padding: 2em;
+}
+
+
+/* END POSITIONING ==========================================================================*/
 
 
 /*BUTTONS*/
@@ -830,18 +843,6 @@ a {
 /* END BUTTONS ==========================================================================*/
 
 
-/*GENERIC*/
-
-.wrapper {
-    position: relative;
-    width: 100%;
-    padding: 2em;
-}
-
-
-/* END GENERIC ==========================================================================*/
-
-
 /*FLEX*/
 
 .flex-container-row {
@@ -862,6 +863,24 @@ a {
 
 
 /* END FLEX ==========================================================================*/
+
+
+/*NAVIGATION*/
+
+.nav {
+    position: relative;
+}
+
+.nav ul {
+    justify-content: space-between;
+}
+
+.nav a {
+    position: relative;
+}
+
+
+/* END NAVIGATION ==========================================================================*/
 
 
 /*HEADER*/
@@ -904,58 +923,45 @@ a {
     flex-grow: 0;
 }
 
-.nav {
-    position: relative;
+.nav-header {
     flex-grow: 1;
 }
 
-.nav ul {
-    justify-content: space-between;
-}
-
-.nav a {
-    position: relative;
+.nav-header a {
     font-size: 1.8em;
-    text-shadow: 0px 0px 3px rgba(80, 80, 80, 1);
-    -webkit-transition: all 3s;
-    -moz-transition: all 3s;
-    transition: all .3s;
     color: #fff;
+    text-shadow: 0px 0px 3px rgba(80, 80, 80, 1);
+    transition: all .3s;
 }
 
-.nav a:hover {
+.nav-header a:hover {
     color: #FF3D00;
     text-shadow: none;
 }
 
-.nav a::after {
+.nav-header a::after {
     content: "";
     position: absolute;
     height: 2px;
     width: 0;
     left: 50%;
     bottom: -2px;
-    /*    opacity: .9;*/
-    /*    background-color: #fff;*/
-    -webkit-transition: all .3s;
-    -moz-transition: all .3s;
     transition: all .3s;
 }
 
-.nav a:hover::after {
+.nav-header a:hover::after {
     width: 100%;
     left: 0;
-    /*    opacity: 1;*/
     background-color: #FF3D00;
 }
 
 .page-title {
     flex-grow: 1;
+    text-align: center;
 }
 
 .page-title > * {
     max-width: 65%;
-    margin: 0 auto;
     text-shadow: 0px 0px 3px rgba(80, 80, 80, 1);
 }
 
@@ -1039,6 +1045,21 @@ a {
 
 #footer {
     background-color: #eee;
+}
+
+.nav-footer {
+    margin: 0 auto 15px auto;
+    width: 50%;
+}
+
+.nav-footer a {
+    color: #fff;
+    text-decoration: underline;
+}
+
+.copyright {
+    position: relative;
+    text-align: center;
 }
 
 

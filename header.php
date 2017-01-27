@@ -1,6 +1,8 @@
 <html>
 
-<head></head>
+<head>
+    <link rel="stylesheet" href="main.css">
+</head>
 
 <body>
     <div id="header">
@@ -9,12 +11,12 @@
             <div class="hero-overlay"> </div>
         </div>
         <div class="flex-container-col">
-            <div class="wrapper flex-container-row">
+            <div class="flex-container-row wrapper">
                 <div class="logo">
                     <a href="/"> LOGO PLACEHOLDER (LAMBERT GUIDING SERVICE)</a>
                 </div>
                 <div class="flex-spacer"></div>
-                <div class="nav">
+                <div class="nav-header nav">
                     <ul class="flex-container-row">
                         <li>
                             <a href="/about"> About </a>
