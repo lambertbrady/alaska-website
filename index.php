@@ -9,6 +9,7 @@
 <body>
     <?php include 'header.php';?>
         <div id="content">
+            <a name="welcome"></a>
             <div class="welcome-shadow wrapper">
                 <div class="welcome">
                     <h2 class="primary-dark">
@@ -35,7 +36,7 @@
                     <div class="flex-container-row">
                         <div> </div>
                         <div> </div>
-                        <div> </div>
+                        <!--                        <div> </div>-->
                     </div>
                 </a>
             </div>

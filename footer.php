@@ -1,6 +1,8 @@
 <html>
 
-<head></head>
+<head>
+    <link rel="stylesheet" href="main.css">
+</head>
 
 <body>
     <div id="footer">

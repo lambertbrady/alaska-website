@@ -1,6 +1,8 @@
 <html>
 
-<head></head>
+<head>
+    <link rel="stylesheet" href="main.css">
+</head>
 
 <body>
     <div id="header">
@@ -46,7 +48,7 @@
                 <div class="flex-spacer"></div>
             </div>
             <div class="scroll-button">
-                <a href="/Gallery" class="btn btn-large"> Explore (below) </a>
+                <a href="#welcome" class="btn btn-large"> Explore (below) </a>
             </div>
         </div>
     </div>
