@@ -16,7 +16,7 @@
                     <a href="/"> LOGO PLACEHOLDER (LAMBERT GUIDING SERVICE)</a>
                 </div>
                 <div class="flex-spacer"></div>
-                <div class="nav-header nav">
+                <div class="nav-header">
                     <ul class="flex-container-row">
                         <li>
                             <a href="/about"> About </a>

@@ -7,7 +7,7 @@
 <body>
     <div id="footer">
         <div class="wrapper">
-            <div class="nav-footer nav">
+            <div class="nav-footer">
                 <ul class="primary-dark">
                     <li>
                         <a href="/about"> About </a>

@@ -865,24 +865,6 @@ a {
 /* END FLEX ==========================================================================*/
 
 
-/*NAVIGATION*/
-
-.nav {
-    position: relative;
-}
-
-.nav ul {
-    justify-content: space-between;
-}
-
-.nav a {
-    position: relative;
-}
-
-
-/* END NAVIGATION ==========================================================================*/
-
-
 /*HEADER*/
 
 #header {
@@ -924,10 +906,16 @@ a {
 }
 
 .nav-header {
+    position: relative;
     flex-grow: 1;
 }
 
+.nav-header ul {
+    justify-content: space-between;
+}
+
 .nav-header a {
+    position: relative;
     font-size: 1.8em;
     color: #fff;
     text-shadow: 0px 0px 3px rgba(80, 80, 80, 1);
