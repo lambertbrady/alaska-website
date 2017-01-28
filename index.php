@@ -11,7 +11,7 @@
         <div id="content">
             <div class="welcome-shadow wrapper">
                 <div class="welcome">
-                    <h2 class="text-primary-lightBackground">
+                    <h2 class="primary-dark">
                         Welcome to the Wilderness
                     </h2>
                     <p>

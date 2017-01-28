@@ -41,10 +41,10 @@
             </div>
             <div class="page-title flex-container-col">
                 <div class="flex-spacer"></div>
-                <h3 class="text-primary-darkBackground">
+                <h3 class="primary-light">
                     This is a header. Be sure to check out font sizes.
                 </h3>
-                <p class="text-secondary-darkBackground">Neat</p>
+                <p class="secondary-light">Neat</p>
                 <div class="flex-spacer"></div>
             </div>
             <div class="scroll-button">

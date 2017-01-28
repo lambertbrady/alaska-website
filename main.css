@@ -774,35 +774,23 @@ a {
 
 /*TEXT*/
 
-.text-primary-lightBackground {
+.primary-dark,
+.primary-dark * {
     color: rgba(0, 0, 0, .87);
 }
 
-.text-primary-darkBackground {
+.primary-light,
+.primary-light * {
     color: rgba(255, 255, 255, 1);
 }
 
-.text-secondary-lightBackground {
+.secondary-dark,
+.secondary-dark * {
     color: rgba(0, 0, 0, .54);
 }
 
-.text-secondary-darkBackground {
-    color: rgba(255, 255, 255, .7);
-}
-
-.text-primary-lightBackground * {
-    color: rgba(0, 0, 0, .87);
-}
-
-.text-primary-darkBackground * {
-    color: rgba(255, 255, 255, 1);
-}
-
-.text-secondary-lightBackground * {
-    color: rgba(0, 0, 0, .54);
-}
-
-.text-secondary-darkBackground * {
+.secondary-light,
+.secondary-light * {
     color: rgba(255, 255, 255, .7);
 }
 
@@ -832,11 +820,7 @@ a {
     border-radius: 10px;
     text-shadow: none;
     text-transform: uppercase;
-    -moz-background-clip: padding;
-    -webkit-background-clip: padding;
     background-clip: padding-box;
-    -webkit-transition: background .3s, color .3s;
-    -moz-transition: background .3s, color .3s;
     transition: background .3s, color .3s;
 }
 
@@ -973,11 +957,12 @@ a {
 
 .page-title {
     flex-grow: 1;
-    text-align: center;
 }
 
 .page-title > * {
     max-width: 65%;
+    margin: 0 auto;
+    text-align: center;
     text-shadow: 0px 0px 3px rgba(80, 80, 80, 1);
 }
 
@@ -1065,17 +1050,65 @@ a {
 
 .nav-footer {
     margin: 0 auto 15px auto;
-    width: 50%;
+    /*    width: 50%;*/
+}
+
+.nav-footer ul {
+    font-size: 0;
+    text-align: center;
+}
+
+.nav-footer li {
+    font-size: 12px;
+    padding: 0 1em;
 }
 
 .nav-footer a {
-    /*    color: #fff;*/
+    /*    font-size: 16px;*/
+}
+
+.nav-footer li:last-child a {
+    padding: 5px;
+    border: 2px solid #000;
+    /*    border-radius: 10px;*/
+}
+
+.nav-footer a:hover {
+    color: #FF3D00;
     text-decoration: underline;
+}
+
+.nav-footer li:last-child a:hover {
+    /*    color: #FF3D00;*/
+    text-decoration: none;
+    border: 2px solid #FF3D00;
+    background-color: #fff;
+}
+
+.nav-footer a::after {
+    content: "";
+    position: absolute;
+    height: 12px;
+    border-right: 2px solid #000;
+    top: 50%;
+    margin-top: -6px;
+    left: 100%;
+    right: -12px;
+}
+
+.nav-footer li:last-child a::after {
+    content: "";
+    position: absolute;
+    border: 0 solid #000;
 }
 
 .copyright {
     position: relative;
     text-align: center;
+}
+
+.copyright p {
+    margin: 0;
 }
 
 
