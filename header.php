@@ -1,8 +1,6 @@
 <html>
 
-<head>
-    <link rel="stylesheet" href="main.css">
-</head>
+<head></head>
 
 <body>
     <div id="header">
@@ -13,7 +11,7 @@
         <div class="flex-container-col">
             <div class="flex-container-row wrapper">
                 <div class="logo">
-                    <a href="/"> LOGO PLACEHOLDER (LAMBERT GUIDING SERVICE)</a>
+                    <a href="/">LAMBERT WILDERNESS</a>
                 </div>
                 <div class="flex-spacer"></div>
                 <div class="nav-header">
