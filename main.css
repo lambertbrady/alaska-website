@@ -806,6 +806,10 @@ a {
     padding: 2em;
 }
 
+.center, .center-children > * {
+    text-align: center;
+    margin: 0 auto;
+}
 
 /* END POSITIONING ==========================================================================*/
 
@@ -946,15 +950,16 @@ a {
 
 .page-title > * {
     max-width: 65%;
-    margin: 0 auto;
-    text-align: center;
+/*    margin: 0 auto;*/
+/*    text-align: center;*/
     text-shadow: 0px 0px 3px rgba(80, 80, 80, 1);
 }
 
+/*
 .scroll-button {
-    padding: 2em;
     text-align: center;
 }
+*/
 
 
 /* END HEADER ==========================================================================*/
@@ -974,7 +979,7 @@ a {
 
 .welcome {
     position: relative;
-    text-align: center;
+/*    text-align: center;*/
     padding: 3em 0 3em 0;
 }
 
@@ -1040,13 +1045,14 @@ a {
 }
 
 .nav-footer {
-    margin: 0 auto 15px auto;
+/*    margin: 0 auto 15px auto;*/
+    padding-bottom: 15px;
     /*    width: 50%;*/
 }
 
 .nav-footer ul {
     font-size: 0;
-    text-align: center;
+/*    text-align: center;*/
 }
 
 .nav-footer li {

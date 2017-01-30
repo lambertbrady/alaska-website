@@ -2,6 +2,7 @@
 
 <head>
     <link rel="stylesheet" href="main.css">
+    <script src="main.js"></script>
 </head>
 
 <body>
@@ -39,7 +40,7 @@
                     </ul>
                 </div>
             </div>
-            <div class="page-title flex-container-col">
+            <div class="page-title flex-container-col center-children">
                 <div class="flex-spacer"></div>
                 <h3 class="primary-light">
                     This is a header. Be sure to check out font sizes.
@@ -47,8 +48,8 @@
                 <p class="secondary-light">Neat</p>
                 <div class="flex-spacer"></div>
             </div>
-            <div class="scroll-button">
-                <a href="#welcome" class="btn btn-large"> Explore (below) </a>
+            <div class="center wrapper">
+                <a href="#explore" class="btn-scroll btn btn-large"> Explore (below) </a>
             </div>
         </div>
     </div>

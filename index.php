@@ -9,9 +9,8 @@
 <body>
     <?php include 'header.php';?>
         <div id="content">
-            <a name="welcome"></a>
-            <div class="welcome-shadow wrapper">
-                <div class="welcome">
+            <div class="welcome-shadow wrapper" id="explore">
+                <div class="welcome center">
                     <h2 class="primary-dark">
                         Welcome to the Wilderness
                     </h2>

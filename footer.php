@@ -8,7 +8,7 @@
     <div id="footer">
         <div class="wrapper">
             <div class="nav-footer">
-                <ul class="primary-dark">
+                <ul class="primary-dark center">
                     <li>
                         <a href="/about"> About </a>
                     </li>
@@ -29,7 +29,7 @@
                     </li>
                 </ul>
             </div>
-            <div class="copyright">
+            <div class="copyright center">
                 <p class="secondary-dark">&copy; 2017 Lambert Woodriver Camp LLC</p>
             </div>
         </div>
