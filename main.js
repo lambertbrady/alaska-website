@@ -1,4 +1,9 @@
-var scrollBtn = document.getElementsByClassName("btn-scroll");
-scrollBtn.addEventListener("click", scrollAnimation);
+var scrollBtnList = document.getElementsByClassName("btn-scroll");
 
-function scrollAnimation() {}
+var scrollAnimation = function () {
+    alert(this);
+};
+
+for (var i = 0; i < scrollBtnList.length; i++) {
+    scrollBtnList[i].addEventListener("click", scrollAnimation);
+}
