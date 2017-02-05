@@ -806,10 +806,12 @@ a {
     padding: 2em;
 }
 
-.center, .center-children > * {
+.center,
+.center-children > * {
     text-align: center;
     margin: 0 auto;
 }
+
 
 /* END POSITIONING ==========================================================================*/
 
@@ -950,10 +952,11 @@ a {
 
 .page-title > * {
     max-width: 65%;
-/*    margin: 0 auto;*/
-/*    text-align: center;*/
+    /*    margin: 0 auto;*/
+    /*    text-align: center;*/
     text-shadow: 0px 0px 3px rgba(80, 80, 80, 1);
 }
+
 
 /*
 .scroll-button {
@@ -979,7 +982,7 @@ a {
 
 .welcome {
     position: relative;
-/*    text-align: center;*/
+    /*    text-align: center;*/
     padding: 3em 0 3em 0;
 }
 
@@ -1041,26 +1044,52 @@ a {
 /*FOOTER*/
 
 #footer {
+    position: relative;
+    width: 100%;
     background-color: #eee;
 }
 
 .nav-footer {
-/*    margin: 0 auto 15px auto;*/
+    /*    margin: 0 auto 15px auto;*/
     padding-bottom: 15px;
     /*    width: 50%;*/
 }
 
 .nav-footer ul {
     font-size: 0;
-/*    text-align: center;*/
+    /*    text-align: center;*/
 }
 
 .nav-footer li {
+    position: relative;
     font-size: 10px;
     padding: 0 2em;
 }
 
+.nav-footer li:first-child {
+    padding: 0 2em 0 0;
+}
+
+.nav-footer li:last-child {
+    padding: 0 0 0 2em;
+}
+
+.nav-footer li::after {
+    content: "";
+    position: absolute;
+    height: 1.4em;
+    margin-top: -.7em;
+    top: 50%;
+    right: -1px;
+    border-right: 2px solid #000;
+}
+
+.nav-footer li:last-child::after {
+    content: none;
+}
+
 .nav-footer a {
+    position: relative;
     font-size: 1.8em;
 }
 
@@ -1080,23 +1109,6 @@ a {
     text-decoration: none;
     border: 2px solid #FF3D00;
     background-color: #fff;
-}
-
-.nav-footer a::after {
-    content: "";
-    position: absolute;
-    height: 12px;
-    border-right: 2px solid #000;
-    top: 50%;
-    margin-top: -6px;
-    left: 100%;
-    right: -12px;
-}
-
-.nav-footer li:last-child a::after {
-    content: "";
-    position: absolute;
-    border: 0 solid #000;
 }
 
 .copyright {
