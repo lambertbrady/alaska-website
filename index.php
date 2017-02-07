@@ -27,18 +27,28 @@
                 </div>
             </div>
             <div class="gallery">
-                <a href="/gallery">
-                    <div class="flex-container-row">
-                        <div> </div>
-                        <div> </div>
-                        <div> </div>
+                <!--                <a href="/gallery">-->
+                <div class="flex-container-row">
+                    <div>
+                        <a href="/gallery"></a>
                     </div>
-                    <div class="flex-container-row">
-                        <div> </div>
-                        <div> </div>
-                        <!--                        <div> </div>-->
+                    <div>
+                        <a href="/gallery"></a>
                     </div>
-                </a>
+                    <div>
+                        <a href="/gallery"></a>
+                    </div>
+                </div>
+                <div class="flex-container-row">
+                    <div>
+                        <a href="/gallery"></a>
+                    </div>
+                    <div>
+                        <a href="/gallery"></a>
+                    </div>
+                    <!--                        <div> </div>-->
+                </div>
+                <!--                </a>-->
             </div>
         </div>
         <?php include 'footer.php';?>
