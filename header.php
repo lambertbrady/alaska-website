@@ -41,14 +41,13 @@
             </div>
             <div class="page-title flex-container-col center-children">
                 <div class="flex-spacer"></div>
-                <h3 class="primary-light">
-                    This is a header. Be sure to check out font sizes.
-                </h3>
-                <p class="secondary-light">Neat</p>
+                <h1 class="primary-light">
+                    Welcome to the Wilderness
+                </h1>
                 <div class="flex-spacer"></div>
             </div>
             <div class="center wrapper">
-                <a href="#explore" class="btn-scroll btn btn-large"> Explore (below) </a>
+                <a href="#explore" class="btn-scroll btn btn-large"> Explore </a>
             </div>
         </div>
     </div>

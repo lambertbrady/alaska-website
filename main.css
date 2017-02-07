@@ -713,62 +713,69 @@ template {
     font-family: Cabin, Arial, sans-serif;
 }
 
-body {
+html {
     font-size: 62.5%;
-    /* 10px */
-    line-height: 2em;
+    /*10px*/
+    /*default font-size is 16px, so 16px * .625 = 10px*/
+}
+
+body {
+    font-size: 1rem;
+    /*    line-height: 2em;*/
 }
 
 h1,
 h2,
-h3 {
+h3,
+h4,
+p {
     display: block;
-    margin: 0 0 10px 0;
-    line-height: 1.4em;
-    font-weight: 400;
 }
 
-
-/*24 30 36*/
-
 h1 {
-    font-size: 2.4em;
-    margin: 0 0 20px 0;
+    font-size: 4.8rem;
+    /*relative to font-size of html element*/
+    font-weight: 700;
+    line-height: 1.7em;
+    /*relative to font-size of current element*/
 }
 
 h2 {
-    font-size: 3em;
-    margin: 0 0 25px 0;
+    font-size: 3.6rem;
+    font-weight: 400;
+    line-height: 2em;
+    /*    margin: 0 0 2.5em 0;*/
 }
 
 h3 {
-    font-size: 3.6em;
-    font-weight: 600;
-    margin: 0 0 30px 0;
+    font-size: 2.8rem;
+    font-weight: 400;
+    line-height: 2em;
+    /*    margin: 0 0 2em 0;*/
+}
+
+h4 {
+    font-size: 1.8rem;
+    font-weight: 400;
+    line-height: 2em;
 }
 
 p {
-    display: block;
-    margin: 0 0 15px 0;
-    text-align: center;
-    font-size: 1.8em;
+    font-size: 1.6rem;
     font-weight: normal;
-    line-height: normal;
+    line-height: 2.2em;
+    text-align: center;
+    margin: 0 0 15px 0;
     color: rgba(0, 0, 0, .54);
 }
 
-li {
-    display: inline-block;
-}
-
 a {
-    display: block;
-    font-size: 1.8em;
+    font-size: 1.6rem;
     text-decoration: none;
     color: #FF3D00;
 }
 
-
+h1
 /* END TAGS ==========================================================================*/
 
 
@@ -958,17 +965,8 @@ a {
 
 .page-title > * {
     max-width: 65%;
-    /*    margin: 0 auto;*/
-    /*    text-align: center;*/
     text-shadow: 0px 0px 3px rgba(80, 80, 80, 1);
 }
-
-
-/*
-.scroll-button {
-    text-align: center;
-}
-*/
 
 
 /* END HEADER ==========================================================================*/
@@ -988,7 +986,6 @@ a {
 
 .welcome {
     position: relative;
-    /*    text-align: center;*/
     padding: 3em 0 3em 0;
 }
 
@@ -1007,8 +1004,6 @@ a {
     background-size: cover;
     background-position: center;
     /*    filter: saturate(110%);*/
-    /*    transition: opacity 1s;*/
-    /*    border: 2px solid #fff;*/
 }
 
 .gallery div:nth-of-type(1) div:nth-of-type(1) {
@@ -1042,21 +1037,6 @@ a {
     background-position: 50% 95%;
 }
 
-
-/*
-.gallery div:nth-of-type(2) div:nth-of-type(3) {
-    flex-grow: 2;
-    background-image: url(images/7.jpg);
-}
-*/
-
-
-/*
-.gallery div div:hover {
-    opacity: .75;
-}
-*/
-
 .gallery a {
     position: relative;
     width: 100%;
@@ -1083,19 +1063,20 @@ a {
 }
 
 .nav-footer {
-    /*    margin: 0 auto 15px auto;*/
-    padding-bottom: 15px;
-    /*    width: 50%;*/
+    margin-bottom: 1.5em;
 }
 
 .nav-footer ul {
     font-size: 0;
+    /*get rid of space between inline elements*/
     /*    text-align: center;*/
 }
 
 .nav-footer li {
+    display: inline-block;
     position: relative;
-    font-size: 10px;
+    font-size: 1rem;
+    /*relative to font-size of html element*/
     padding: 0 2em;
 }
 
@@ -1134,12 +1115,9 @@ a {
 
 .nav-footer a:hover {
     color: #FF3D00;
-    text-decoration: underline;
 }
 
 .nav-footer li:last-child a:hover {
-    /*    color: #FF3D00;*/
-    text-decoration: none;
     border: 2px solid #FF3D00;
     background-color: #fff;
 }

@@ -3,7 +3,7 @@
 <head>
     <title> Lambert Wilderness </title>
     <link rel="stylesheet" href="main.css">
-    <link href="https://fonts.googleapis.com/css?family=Cabin:400,400italic,700" rel="stylesheet" type="text/css" media="all">
+    <link href="https://fonts.googleapis.com/css?family=Cabin" rel="stylesheet" type="text/css" media="all">
     <script type="text/javascript" src="main.js" async></script>
 </head>
 
@@ -16,7 +16,7 @@
                         Welcome to the Wilderness
                     </h2>
                     <p>
-                        Here's some great information to help you figure this out.
+                        Here's some <a>link</a>great information to help you figure this out.
                     </p>
                     <p>
                         Heyyyyy
