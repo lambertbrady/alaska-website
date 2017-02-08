@@ -3,7 +3,7 @@
 <head>
     <title> Lambert Wilderness </title>
     <link rel="stylesheet" href="main.css">
-    <link href="https://fonts.googleapis.com/css?family=Cabin" rel="stylesheet" type="text/css" media="all">
+    <link href="https://fonts.googleapis.com/css?family=Cabin:400,700" rel="stylesheet" type="text/css" media="all">
     <script type="text/javascript" src="main.js" async></script>
 </head>
 
@@ -11,12 +11,11 @@
     <?php include 'header.php';?>
         <div id="content">
             <div class="welcome-shadow wrapper" id="explore">
-                <div class="welcome center">
+                <div class="welcome center center-children">
                     <h2 class="primary-dark">
                         Welcome to the Wilderness
                     </h2>
-                    <p>
-                        Here's some <a>link</a>great information to help you figure this out.
+                    <p> mmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmm
                     </p>
                     <p>
                         Heyyyyy

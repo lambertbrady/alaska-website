@@ -29,7 +29,7 @@
                     </li>
                 </ul>
             </div>
-            <div class="copyright center">
+            <div class="copyright center center-children">
                 <p class="secondary-dark">&copy; 2017 Lambert Woodriver Camp LLC</p>
             </div>
         </div>
