@@ -1,6 +1,7 @@
 <html>
 
-<head></head>
+<head>
+</head>
 
 <body>
     <div id="header">
@@ -9,12 +10,12 @@
             <div class="hero-overlay"> </div>
         </div>
         <div class="flex-container-col">
-            <div class="wrapper flex-container-row">
+            <div class="flex-container-row wrapper">
                 <div class="logo">
-                    <a href="/"> LOGO PLACEHOLDER (LAMBERT GUIDING SERVICE)</a>
+                    <a href="/">LAMBERT WILDERNESS</a>
                 </div>
                 <div class="flex-spacer"></div>
-                <div class="nav">
+                <div class="nav-header">
                     <ul class="flex-container-row">
                         <li>
                             <a href="/about"> About </a>
@@ -23,7 +24,7 @@
                             <a href="/destination"> Destination </a>
                         </li>
                         <li>
-                            <a href="/activities"> *Activities </a>
+                            <a href="/activities"> Activities </a>
                         </li>
                         <li>
                             <a href="/planning"> Planning </a>
@@ -37,16 +38,16 @@
                     </ul>
                 </div>
             </div>
-            <div class="page-title flex-container-col">
+            <div class="page-title flex-container-col center-children-block">
                 <div class="flex-spacer"></div>
-                <h3 class="text-primary-darkBackground">
-                    This is a header. Be sure to check out font sizes.
-                </h3>
-                <p class="text-secondary-darkBackground">Neat</p>
+                <h1 class="primary-light">
+                    Welcome to the Wilderness
+                </h1>
+                <!--SVG image of Alaska-->
                 <div class="flex-spacer"></div>
             </div>
-            <div class="scroll-button">
-                <a href="/Gallery" class="btn btn-large"> Explore (below) </a>
+            <div class="center-inline wrapper">
+                <a href="#explore" class="btn-scroll btn btn-large"> Explore</a>
             </div>
         </div>
     </div>

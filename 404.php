@@ -9,7 +9,11 @@
 
 <body>
     <?php include 'header.php'?>
-        <h2>Website under construction - we'll be up and running soon!</h2>
+        <div id="page-404">
+            <div class="wrapper">
+                <h2>Website under construction - we'll be up and running soon!</h2>
+            </div>
+        </div>
         <?php include 'footer.php'?>
 </body>
 

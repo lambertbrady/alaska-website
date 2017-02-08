@@ -713,57 +713,95 @@ template {
     font-family: Cabin, Arial, sans-serif;
 }
 
-body {
+html {
     font-size: 62.5%;
-    /* 10px */
-    line-height: 2em;
+    /*10px*/
+    /*default font-size is 16px, so 16px * .625 = 10px*/
 }
+
+body {
+    font-size: 1rem;
+    /*rem: relative to font-size of html element*/
+}
+
+
+/*60 "m" characters at 16px font-size in Cabin font-family take up 848px*/
 
 h1,
 h2,
-h3 {
+h3,
+h4,
+p {
     display: block;
-    margin: 0 0 10px 0;
-    line-height: 1.4em;
-    font-weight: 400;
+    max-width: 60rem;
 }
 
 
-/*24 30 36*/
+/*href="https://fonts.googleapis.com/css?family=Cabin:400,700"*/
+
+
+/*font-weight can be "normal" (400) or "bold" (700), unless more options are loaded */
+
+blockquote {
+    font-size: 2.4em;
+    /*relative to font-size of parent element*/
+    font-weight: normal;
+    line-height: 1.4583em;
+    /*relative to font-size of current element*/
+}
 
 h1 {
-    font-size: 2.4em;
-    margin: 0 0 20px 0;
+    font-size: 4.8em;
+    font-weight: bold;
+    line-height: 1.05em;
 }
 
 h2 {
-    font-size: 3em;
-    margin: 0 0 25px 0;
+    font-size: 3.6em;
+    font-weight: normal;
+    line-height: 1.25em;
 }
 
 h3 {
-    font-size: 3.6em;
-    font-weight: 600;
-    /*    margin: 0 0 30px 0;*/
+    font-size: 2.8em;
+    font-weight: normal;
+    line-height: 1.25em;
+}
+
+h4 {
+    font-size: 1.8em;
+    font-weight: normal;
+    line-height: 1.2222em;
 }
 
 p {
-    display: block;
-    margin: 0 0 15px 0;
-    text-align: center;
-    font-size: 1.8em;
+    font-size: 1.6em;
     font-weight: normal;
-    line-height: normal;
+    line-height: 1.375em;
+    text-align: justify;
+    margin: 0;
     color: rgba(0, 0, 0, .54);
 }
 
-li {
-    display: inline-block;
+
+/*all <p> elements placed immediately before a header element are selected*/
+
+h1 ~ p,
+h2 ~ p,
+h3 ~ p,
+h4 ~ p {
+    margin-top: .5em;
+}
+
+
+/*all <p> elements placed immediately after a <p> element are selected*/
+
+p + p {
+    margin-top: 1em;
 }
 
 a {
     text-decoration: none;
-    display: block;
     color: #FF3D00;
 }
 
@@ -773,24 +811,75 @@ a {
 
 /*TEXT*/
 
-.text-primary-lightBackground {
+.primary-dark,
+.primary-dark p,
+.primary-dark-all * {
     color: rgba(0, 0, 0, .87);
 }
 
-.text-primary-darkBackground {
+.primary-light,
+.primary-light p .primary-light-all * {
     color: rgba(255, 255, 255, 1);
 }
 
-.text-secondary-lightBackground {
+.secondary-dark,
+.secondary-dark p,
+.secondary-dark-all * {
+    /*    color: rgba(0, 0, 0, .705); linear*/
+    color: rgba(0, 0, 0, .6854);
+}
+
+.secondary-light,
+.secondary-light p,
+.secondary-light-all * {
+    color: rgba(255, 255, 255, .85);
+}
+
+.tertiary-dark,
+.tertiary-dark p,
+.tertiary-dark-all * {
     color: rgba(0, 0, 0, .54);
 }
 
-.text-secondary-darkBackground {
-    color: rgba(255, 255, 255, .7);
+.tertiary-light,
+.tertiary-light p,
+.tertiary-light-all * {
+    /*    color: rgba(255, 255, 255, .7); linear*/
+    color: rgba(255, 255, 255, .8367);
 }
 
 
 /* END TEXT ==========================================================================*/
+
+
+/*POSITIONING*/
+
+.wrapper {
+    position: relative;
+    width: 100%;
+    padding: 2em;
+}
+
+.center,
+.center-children > * {
+    margin-right: auto;
+    margin-left: auto;
+    text-align: center;
+}
+
+.center-block,
+.center-children-block > * {
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.center-inline,
+.center-children-inline > * {
+    text-align: center;
+}
+
+
+/* END POSITIONING ==========================================================================*/
 
 
 /*BUTTONS*/
@@ -803,11 +892,7 @@ a {
     border-radius: 10px;
     text-shadow: none;
     text-transform: uppercase;
-    -moz-background-clip: padding;
-    -webkit-background-clip: padding;
     background-clip: padding-box;
-    -webkit-transition: background .3s, color .3s;
-    -moz-transition: background .3s, color .3s;
     transition: background .3s, color .3s;
 }
 
@@ -830,30 +915,16 @@ a {
 /* END BUTTONS ==========================================================================*/
 
 
-/*GENERIC*/
-
-.wrapper {
-    position: relative;
-    width: 100%;
-    padding: 2em;
-}
-
-
-/* END GENERIC ==========================================================================*/
-
-
 /*FLEX*/
 
 .flex-container-row {
     display: flex;
     flex-flow: row nowrap;
-    justify-content: flex-start;
 }
 
 .flex-container-col {
     display: flex;
     flex-flow: column nowrap;
-    justify-content: flex-start;
 }
 
 .flex-spacer {
@@ -886,7 +957,7 @@ a {
     position: absolute;
     width: 100%;
     height: 100%;
-    /*    background-image: url(images/5.jpg);*/
+    background-image: url(images/home/hero.jpg);
     background-size: cover;
     background-position: 0 65%;
 }
@@ -904,48 +975,46 @@ a {
     flex-grow: 0;
 }
 
-.nav {
-    position: relative;
+.logo a {
+    font-size: 1.5em;
+    color: #fff;
+    text-shadow: 0px 0px 3px rgba(80, 80, 80, .5);
+}
+
+.nav-header {
     flex-grow: 1;
 }
 
-.nav ul {
+.nav-header ul {
     justify-content: space-between;
 }
 
-.nav a {
+.nav-header a {
     position: relative;
     font-size: 1.8em;
-    text-shadow: 0px 0px 3px rgba(80, 80, 80, 1);
-    -webkit-transition: all 3s;
-    -moz-transition: all 3s;
-    transition: all .3s;
     color: #fff;
+    text-shadow: 0px 0px 3px rgba(100, 100, 100, 1);
+    transition: all .3s;
 }
 
-.nav a:hover {
+.nav-header a:hover {
     color: #FF3D00;
     text-shadow: none;
 }
 
-.nav a::after {
+.nav-header a::after {
     content: "";
     position: absolute;
     height: 2px;
     width: 0;
     left: 50%;
     bottom: -2px;
-    /*    opacity: .9;*/
-    /*    background-color: #fff;*/
-    -webkit-transition: all .3s;
-    -moz-transition: all .3s;
     transition: all .3s;
 }
 
-.nav a:hover::after {
+.nav-header a:hover::after {
     width: 100%;
     left: 0;
-    /*    opacity: 1;*/
     background-color: #FF3D00;
 }
 
@@ -953,15 +1022,13 @@ a {
     flex-grow: 1;
 }
 
-.page-title > * {
+.page-title h1,
+.page-title h2,
+.page-title h3,
+.page-title h4 {
+    flex-grow: .1;
     max-width: 65%;
-    margin: 0 auto;
-    text-shadow: 0px 0px 3px rgba(80, 80, 80, 1);
-}
-
-.scroll-button {
-    padding: 2em;
-    text-align: center;
+    text-shadow: 0px 0px 10px rgba(100, 100, 100, 1);
 }
 
 
@@ -977,18 +1044,24 @@ a {
 }
 
 .welcome-shadow {
-    box-shadow: inset 0 15px 15px -15px rgba(0, 0, 0, .15), inset 0 -10px 10px -10px rgba(0, 0, 0, .15);
+    box-shadow: inset 0 15px 15px -15px rgba(0, 0, 0, .2), inset 0 -10px 10px -10px rgba(0, 0, 0, .15);
 }
 
 .welcome {
+    font-size: 1.2rem;
     position: relative;
-    text-align: center;
     padding: 3em 0 3em 0;
 }
 
+.welcome > * {
+    max-width: 75rem;
+}
+
+.welcome span {}
+
 .gallery {
     position: relative;
-    background-color: #000;
+    background-color: #fff;
 }
 
 .gallery div div {
@@ -996,39 +1069,52 @@ a {
     height: 300px;
     background-size: cover;
     background-position: center;
-    filter: saturate(110%);
-    transition: opacity 1s;
+    /*    filter: saturate(110%);*/
 }
 
 .gallery div:nth-of-type(1) div:nth-of-type(1) {
-    flex-grow: 2;
-    background-image: url(images/1.jpg);
-    background-position: 50% 80%;
+    margin: 0 3px 3px 0;
+    background-image: url(images/home/hiking-glacier.jpg);
+    background-position: 50% 75%;
 }
 
 .gallery div:nth-of-type(1) div:nth-of-type(2) {
-    background-image: url(images/2.jpg);
+    margin-right: 3px;
+    background-image: url(images/home/landscape-glacier.jpg);
+    background-position: 50% 70%;
 }
 
 .gallery div:nth-of-type(1) div:nth-of-type(3) {
-    background-image: url(images/10.jpg);
+    flex-grow: 2;
+    background-image: url(images/home/hiking-rainbow.jpg);
+    background-position: 50% 15%;
 }
 
 .gallery div:nth-of-type(2) div:nth-of-type(1) {
-    background-image: url(images/4.jpg);
+    margin-right: 3px;
+    flex-grow: 2;
+    background-image: url(images/home/pano-mountains.jpg);
+    background-position: 35% 50%;
 }
 
 .gallery div:nth-of-type(2) div:nth-of-type(2) {
-    background-image: url(images/8.jpg);
+    flex-grow: 1;
+    background-image: url(images/home/hiking-valley.jpg);
+    background-position: 50% 95%;
 }
 
-.gallery div:nth-of-type(2) div:nth-of-type(3) {
-    flex-grow: 2;
-    background-image: url(images/7.jpg);
+.gallery a {
+    display: inline-block;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background-color: #000;
+    opacity: 0;
+    transition: opacity .5s;
 }
 
-.gallery div div:hover {
-    opacity: .75;
+.gallery a:hover {
+    opacity: .25;
 }
 
 
@@ -1038,8 +1124,87 @@ a {
 /*FOOTER*/
 
 #footer {
+    position: relative;
+    width: 100%;
     background-color: #eee;
+}
+
+.nav-footer {
+    margin-bottom: 1.5em;
+}
+
+.nav-footer ul {
+    font-size: 0;
+    /*get rid of space between <li> elements*/
+}
+
+.nav-footer li {
+    display: inline-block;
+    position: relative;
+    font-size: 1rem;
+    padding: 0 2em;
+}
+
+.nav-footer li:first-child {
+    padding: 0 2em 0 0;
+}
+
+.nav-footer li:last-child {
+    padding: 0 0 0 2em;
+}
+
+.nav-footer li::after {
+    content: "";
+    position: absolute;
+    height: 1.4em;
+    margin-top: -.7em;
+    top: 50%;
+    right: -1px;
+    border-right: 2px solid #000;
+}
+
+.nav-footer li:last-child::after {
+    content: none;
+}
+
+.nav-footer a {
+    position: relative;
+    font-size: 1.8em;
+}
+
+.nav-footer li:last-child a {
+    padding: 5px;
+    border: 2px solid #000;
+    /*    border-radius: 10px;*/
+}
+
+.nav-footer a:hover {
+    color: #FF3D00;
+}
+
+.nav-footer li:last-child a:hover {
+    border: 2px solid #FF3D00;
+    background-color: #fff;
+}
+
+.copyright {
+    position: relative;
+}
+
+.copyright p {
+    font-size: 1.6em;
 }
 
 
 /* END FOOTER ==========================================================================*/
+
+
+/*404*/
+
+#page-404 {
+    position: relative;
+    background-color: #fff;
+}
+
+
+/* END 404 ==========================================================================*/
