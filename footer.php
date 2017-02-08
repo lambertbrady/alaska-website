@@ -1,14 +1,13 @@
 <html>
 
 <head>
-    <link rel="stylesheet" href="main.css">
 </head>
 
 <body>
     <div id="footer">
         <div class="wrapper">
-            <div class="nav-footer">
-                <ul class="primary-dark center">
+            <div class="nav-footer center-inline">
+                <ul class="primary-dark-all">
                     <li>
                         <a href="/about"> About </a>
                     </li>
@@ -16,7 +15,7 @@
                         <a href="/destination"> Destination </a>
                     </li>
                     <li>
-                        <a href="/activities"> *Activities </a>
+                        <a href="/activities"> Activities </a>
                     </li>
                     <li>
                         <a href="/planning"> Planning </a>
@@ -29,8 +28,8 @@
                     </li>
                 </ul>
             </div>
-            <div class="copyright center center-children">
-                <p class="secondary-dark">&copy; 2017 Lambert Woodriver Camp LLC</p>
+            <div class="copyright center-children">
+                <p class="tertiary-dark">&copy; 2017 Lambert Woodriver Camp LLC</p>
             </div>
         </div>
     </div>

@@ -1,7 +1,6 @@
 <html>
 
 <head>
-    <link rel="stylesheet" href="main.css">
 </head>
 
 <body>
@@ -25,7 +24,7 @@
                             <a href="/destination"> Destination </a>
                         </li>
                         <li>
-                            <a href="/activities"> *Activities </a>
+                            <a href="/activities"> Activities </a>
                         </li>
                         <li>
                             <a href="/planning"> Planning </a>
@@ -39,15 +38,16 @@
                     </ul>
                 </div>
             </div>
-            <div class="page-title flex-container-col center-children">
+            <div class="page-title flex-container-col center-children-block">
                 <div class="flex-spacer"></div>
                 <h1 class="primary-light">
                     Welcome to the Wilderness
                 </h1>
+                <!--SVG image of Alaska-->
                 <div class="flex-spacer"></div>
             </div>
-            <div class="center wrapper">
-                <a href="#explore" class="btn-scroll btn btn-large"> Explore </a>
+            <div class="center-inline wrapper">
+                <a href="#explore" class="btn-scroll btn btn-large"> Explore</a>
             </div>
         </div>
     </div>
