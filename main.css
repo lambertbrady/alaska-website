@@ -1066,7 +1066,7 @@ a {
 
 .gallery div div {
     flex-grow: 1;
-    height: 300px;
+    height: 313px;
     background-size: cover;
     background-position: center;
     /*    filter: saturate(110%);*/

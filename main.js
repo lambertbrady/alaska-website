@@ -1,17 +1,3 @@
-function getBodyElement() {
-    var docEl = document.documentElement;
-    var bodyEl = document.body;
-    var docTop = docEl.scrollTop; //returns 0 in Chrome
-    var bodyTop = bodyEl.scrollTop; //returns 0 in FF and IE
-    if (docTop == bodyTop) { //both will be 0
-        return docEl;
-    } else if (docTop == 0) {
-        return bodyEl;
-    } else {
-        return docEl;
-    }
-}
-
 ////////////////////
 //EASING FUNCTIONS//
 ////////////////////
@@ -50,8 +36,15 @@ function getScrollSpeed(distance, minSpeed, maxSpeed) {
     return speed / 1000; //convert to pixels per millisecond
 }
 
-function animateScroll(initialVal) {
-    var scrollDistance = Math.abs(initialVal); //pixels
+function animateScroll(targetTop) {
+    var scrollDirection = Math.sign(targetTop); //returns 1, 0, -1
+    var scrollDistance = Math.abs(targetTop); //pixels
+    if (scrollDistance == 0) {
+        return;
+    } else if (scrollDirection == 1) { //target is below the top of the viewport
+        var maxScrollDistance = document.body.scrollHeight - window.innerHeight - document.body.scrollTop; //distance from bottom of viewport to bottom of page
+        scrollDistance = Math.min(maxScrollDistance, scrollDistance); //adjusts scrollDistance in case there isn't enough content between the target and the bottom of the page to scroll the target all the way to the top of the viewport
+    }
     var minScrollSpeed = 500; //pixels per millisecond
     var maxScrollSpeed = 1500; //pixels per millisecond
     var scrollSpeed = getScrollSpeed(scrollDistance, minScrollSpeed, maxScrollSpeed);
@@ -61,23 +54,21 @@ function animateScroll(initialVal) {
     var timeSteps = Math.max(eqnTimeSteps, minTimeSteps); //keeps a minimum number of time steps
     var deltaTime = duration / timeSteps;
     var time = 0; //don't use "new window.Date().getTime()" because the animation won't finish, due to delays that occur when running code within the interval. Calculating this way instead will make the animation better, although it will take slightly longer than the value of "duration" to complete
-    var currentVal = initialVal;
+    var initialVal;
+    var currentVal = initialVal = scrollDirection * scrollDistance;
     var finalVal = 0; //top of element will be in line with top of viewport at end of animation, so there will be 0 pixels from viewport to top of target element
     var pixelsScrolled = 0;
-    var counter = 0;
     var animationInterval = setInterval(function () {
         if (time <= duration) {
             var newVal = animateProperty(time, initialVal, finalVal, duration);
             var scrollVal = Math.round(currentVal - newVal); //decimal values get truncated when the .scrollBy method is called, so round scroll value to nearest integer, which represents a pixel
             window.scrollBy(0, scrollVal);
             currentVal = newVal;
-            pixelsScrolled += scrollVal;
             time += deltaTime;
-            counter++;
+            pixelsScrolled += scrollVal;
         } else {
             var scrollVal = initialVal - pixelsScrolled; //gives the final scroll distance needed - the target can only end up at it's exact, final destination if duration/deltaTime is equal to an integer value. Even so, the target may not get to the exact destination due to rounding errors, so the difference between the initial distance and the real number of pixels scrolled is used to give the final scroll value
             window.scrollBy(0, scrollVal);
-            //            alert(counter++);
             clearInterval(animationInterval);
         }
     }, deltaTime);
