@@ -886,24 +886,25 @@ a {
 
 .btn {
     display: inline-block;
-    color: #607D8B;
-    font-weight: 600;
-    background-color: #fff;
-    border-radius: 10px;
-    text-shadow: none;
+    font-weight: bold;
     text-transform: uppercase;
-    background-clip: padding-box;
+    text-shadow: none;
+    color: #607D8B;
+    background-color: #fff;
+    border: 2px solid #fff;
+    border-radius: 10px;
+    /*    background-clip: padding-box;*/
     transition: background .3s, color .3s;
 }
 
 .btn-small {
-    font-size: 1.2em;
-    padding: 10px 20px;
+    font-size: 1.2rem;
+    padding: 8px 18px;
 }
 
 .btn-large {
-    font-size: 1.4em;
-    padding: 12px 24px;
+    font-size: 1.4rem;
+    padding: 10px 22px;
 }
 
 .btn:hover {
@@ -1018,15 +1019,10 @@ a {
     background-color: #FF3D00;
 }
 
-.page-title {
-    flex-grow: 1;
-}
-
 .page-title h1,
 .page-title h2,
 .page-title h3,
 .page-title h4 {
-    flex-grow: .1;
     max-width: 65%;
     text-shadow: 0px 0px 10px rgba(100, 100, 100, 1);
 }

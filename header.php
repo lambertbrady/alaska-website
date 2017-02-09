@@ -38,17 +38,17 @@
                     </ul>
                 </div>
             </div>
-            <div class="page-title flex-container-col center-children-block">
-                <div class="flex-spacer"></div>
+            <div class="flex-spacer"></div>
+            <div class="page-title center-children">
                 <h1 class="primary-light">
                     Welcome to the Wilderness
                 </h1>
                 <!--SVG image of Alaska-->
-                <div class="flex-spacer"></div>
             </div>
             <div class="center-inline wrapper">
                 <a href="#explore" class="btn-scroll btn btn-large"> Explore</a>
             </div>
+            <div class="flex-spacer"></div>
         </div>
     </div>
 </body>
