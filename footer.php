@@ -4,7 +4,6 @@
 </head>
 
 <body>
-    <div id="footer">
         <div class="wrapper">
             <div class="nav-footer center-inline">
                 <ul class="primary-dark-all">
@@ -32,7 +31,6 @@
                 <p class="tertiary-dark">&copy; 2017 Lambert Woodriver Camp LLC</p>
             </div>
         </div>
-    </div>
 </body>
 
 </html>

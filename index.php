@@ -1,51 +1,34 @@
 <html>
 
 <head>
-    <title> Lambert Wilderness </title>
+    <!--    MAKE DYNAMIC "*page-title* - Lambert Wilderness" -->
+    <!--    <title> Lambert Wilderness </title>-->
     <link rel="stylesheet" href="main.css">
     <link href="https://fonts.googleapis.com/css?family=Cabin:400,700" rel="stylesheet" type="text/css" media="all">
     <script type="text/javascript" src="main.js" async></script>
 </head>
 
 <body>
-    <?php include 'header.php';?>
-        <div id="content">
-            <div class="welcome-shadow wrapper" id="explore">
-                <div class="welcome secondary-dark center-children-block">
-                    <h2 class="primary-dark">
-                        Lambert Wilderness
-                    </h2>
-                    <!--                    different font style for "Wilderness" in the future-->
-                    <p> Lambert Wilderness offers base camp tours of the breathtaking Alaska Range. </p>
-                    <p>Located just east of Denali, Lambert Wilderness is a family owned and operated destination that has offered expert guiding services for over 50 years.</p>
-                    <p>We know the landscape better than anyone, and are excited to share it with the world. <a href="/contact"> Book your adventure </a> with us today to experience some of the most stunning mountain scenery Alaska has to offer!
-                    </p>
-                </div>
-            </div>
-            <div class="gallery">
-                <!--make vertical dimension responsive (flex-col)-->
-                <div class="flex-container-row">
-                    <div>
-                        <a href="/gallery"></a>
-                    </div>
-                    <div>
-                        <a href="/gallery"></a>
-                    </div>
-                    <div>
-                        <a href="/gallery"></a>
-                    </div>
-                </div>
-                <div class="flex-container-row">
-                    <div>
-                        <a href="/gallery"></a>
-                    </div>
-                    <div>
-                        <a href="/gallery"></a>
-                    </div>
-                </div>
-            </div>
-        </div>
+    <div id="header">
+        <?php include 'header.php';?>
+    </div>
+    <div id="content">
+        <?php
+            $folder = 'content/';
+//            $path = $_SERVER['REQUEST_URI'];
+        parse_str($_SERVER['QUERY_STRING'], $output);
+        //automatically creates variable from url query string, and adds each value to an array. For example, if the url is "index.php?path=example" then a variable "$path" will be created and set equal to "example" within an array.
+        $path = $output['path']; //'path' is the name of the wuery string variable, set in .htaccess
+        echo 'path = ' . $path;
+        $test = $output['test'];
+        echo '////';
+        echo 'test = ' . $test;
+// if ($path == '' | $path == '/' | $path == 'home') { // $content = $folder . 'home.html'; // } elseif (file_exists($folder . $path)) { // $content = $folder . $path; // } else{ // http_response_code (404); // $content = '404.php'; // } // include $content;
+        ?>
+    </div>
+    <div id="footer">
         <?php include 'footer.php';?>
+    </div>
 </body>
 
 </html>

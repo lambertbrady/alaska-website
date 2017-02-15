@@ -1,1 +1,11 @@
-ErrorDocument 404 /404.php
+RewriteEngine On
+
+#RewriteCond %{REQUEST_URI} !=/index.php
+#RewriteRule (.*) /index.php?test=$1 [NC,L]
+
+#RewriteCond %{REQUEST_FILENAME} !-f
+#condition: test string is not a valid file
+#RewriteCond %{REQUEST_FILENAME} !-d
+#condition: test string is not a valid directory
+#RewriteRule ^(.*)$ /index.php?path=$1 [NC,L]
+#rule: all paths will be served on index.php and the path value will be included in a query string

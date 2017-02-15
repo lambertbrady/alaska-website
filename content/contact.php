@@ -1,18 +1,18 @@
 <html>
 
-    <head>
-        <title> Contact </title>
-        <link rel="stylesheet" href="vendors/reset.css">
-        <link rel="stylesheet" href="vendors/normalize.css">
-        <link rel="stylesheet" href="main.css">
-    </head>
+<head>
+    <title> Contact </title>
+    <!--    <link rel="stylesheet" href="../main.css">-->
+</head>
 
-    <body>
-        <?php include 'header.php';?>
-        <div id="content">
+<body>
+    <!--    <?php include '../header.php';?>-->
+    <!--        <div id="content">-->
+    <div class="wrapper">
 
-        </div>
-        <?php include 'footer.php';?>
-    </body>
+    </div>
+    <!--        </div>-->
+    <!--        <?php include '../footer.php';?>-->
+</body>
 
 </html>

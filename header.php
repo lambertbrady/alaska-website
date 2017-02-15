@@ -4,7 +4,6 @@
 </head>
 
 <body>
-    <div id="header">
         <div class="hero">
             <div class="hero-image"> </div>
             <div class="hero-overlay"> </div>
@@ -50,7 +49,6 @@
             </div>
             <div class="flex-spacer"></div>
         </div>
-    </div>
 </body>
 
 </html>
