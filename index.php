@@ -16,15 +16,18 @@
         <?php
 //        use "get_content()"
             $folder = 'content/';
-            $page_arr = ['home','about','activities','destination','planning','gallery','contact'];
+            $page_arr = ['/','about','activities','destination','planning','gallery','contact']; //paths available in URL for users to access
             $page_ext = '.html';
-            echo $_SERVER['QUERY_STRING'] . ' | ';
-            parse_str($_SERVER['QUERY_STRING'], $output); //automatically creates variable from url query string, and adds each value to an array. For example, if the url is "index.php?path=example" then a variable "$path" will be created and set equal to "example" within an array.
+            parse_str($_SERVER['QUERY_STRING'], $output); //automatically creates variable from url query string, and adds each value to an array. For example, if the url is "index.php?key=value" then an element with a value of "value" will be added to an array, and can be referenced using "key"
             $path = $output['path']; //'path' is the name of the query string variable, set in .htaccess
-//            echo 'hey: ' . count($path);
-            if ($path == NULL) {
-                include $folder . 'home'. $page_ext;
-            } else if (in_array($path,$page_arr)) {
+            $error = $output['error']; //'error' is the name of the query string variable, set in .htaccess
+            if ($error != NULL) {
+                include '404.php';
+            }
+            else if (in_array($path, $page_arr)) { //path entered by user found in list of available paths
+                if ($path == '/') {
+                    $path = 'home'; //"home" isn't used directly as a value in $page_arr so
+                }
                 include $folder . $path . $page_ext;
             } else {
                 include '404.php';
