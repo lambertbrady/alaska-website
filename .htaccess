@@ -22,10 +22,6 @@ RewriteRule ^.*$ /index.php? [L,R=301]
 #AND QUERY STRING is not empty
 #THEN redirect permanently to "/index.php" with query strings removed
 
-#RewriteCond %{REQUEST_URI} =/index.php [NC]
-#RewriteCond %{QUERY_STRING} !=""
-#RewriteRule ^(.*)$ $1?path=%{THE_REQUEST} [NC,L]
-
 RewriteCond %{REQUEST_URI} =/
 RewriteRule ^.*$ /index.php?path=/ [L]
 #IF URI is exactly "/"
@@ -33,10 +29,10 @@ RewriteRule ^.*$ /index.php?path=/ [L]
 
 RewriteCond %{REQUEST_URI} =/index.php [NC]
 RewriteCond %{QUERY_STRING} =""
-RewriteRule ^(.*)$ $1?error=404
+RewriteRule ^(.*)$ $1?path=404
 #IF URI is exactly "/index.php" [case insensitive]
 #AND QUERY STRING is empty
-#THEN add query string "error=404" to URL
+#THEN add query string "path=404" to URL
 
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
