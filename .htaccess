@@ -1,38 +1,49 @@
 RewriteEngine On
 RewriteBase /
 
+
 RewriteRule ^(.*)/+$ /$1 [L,R=301]
+#
 #IF URL ends in one or more occurences of "/" preceded by any values
 #THEN redirect permanently to URL replaced by the preceding values, so trailing slashes are removed
+
+#RewriteCond %{REQUEST_URI} /content.*
+#RewriteRule ^.*$ /index.php?path=404
+#RewriteRule ^content.*$ /index.php?path=404
+
+#RewriteCond %{REQUEST_URI} /content
+#RewriteRule ^(.*)$ /heck?%{REQUEST_FILENAME}-%{REQUEST_URI}-%{THE_REQUEST} [L,R=301]
+
+#%{THE_REQUEST}
+#GET /content HTTP/1.1
 
 RewriteCond %{THE_REQUEST} index.php [NC]
 RewriteCond %{REQUEST_URI} !=/index.php
 RewriteRule ^.*$ /index.php [L,R=301]
+#
 #IF REQUEST includes "index.php" [case insensitive]
-#note: REQUEST is only updated on redirects, and is not affected by other Rule Rewrites, so when later rules serve reqests to "/index.php.*" the updated urls will not match on this condition
+#NOTE: REQUEST is only updated on redirects, and is not affected by other Rule Rewrites, so when later rules serve reqests to "/index.php.*" the updated urls will not match on this condition
 #AND URI (path) is not exactly "/index.php"
 #THEN redirect permanently to "/index.php"
+
 
 RewriteCond %{THE_REQUEST} index.php [NC]
 RewriteCond %{REQUEST_URI} =/index.php
 RewriteCond %{QUERY_STRING} !=""
 RewriteRule ^.*$ /index.php? [L,R=301]
+#
 #IF REQUEST includes "index.php" [case insensitive]
 #AND URI is exactly "/index.php"
 #AND QUERY STRING is not empty
 #THEN redirect permanently to "/index.php" with query strings removed
 
+
 RewriteCond %{REQUEST_URI} =/
 RewriteRule ^.*$ /index.php?path=/ [L]
+#
 #IF URI is exactly "/"
 #THEN serve to "/index.php" with query string "path=/"
 
-RewriteCond %{REQUEST_URI} =/index.php [NC]
-RewriteCond %{QUERY_STRING} =""
-RewriteRule ^(.*)$ $1?path=404
-#IF URI is exactly "/index.php" [case insensitive]
-#AND QUERY STRING is empty
-#THEN add query string "path=404" to URL
 
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
@@ -42,3 +53,7 @@ RewriteRule ^(.*)$ /index.php?path=$1 [NC,L]
 #AND DIRECTORY does not exist
 #AND URI is not exactly "/index.php" [case insensitive]
 #THEN serve to "/index.php" with an added query string where "path" is equal to the original URI value
+
+
+ErrorDocument 404 /index.php?path=404
+ErrorDocument 403 /index.php?path=403

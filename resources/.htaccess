@@ -1,0 +1,3 @@
+deny from all
+#
+#serves 403 (forbidden) error for all requests to the given directory and all of its subdirectories. Note: pages can still be accessed with php "include"

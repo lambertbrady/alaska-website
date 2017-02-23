@@ -1,10 +1,10 @@
 <html>
 
-<?php include 'functions.php';?>
+<?php include 'resources/functions.php';?>
 
     <head>
         <title>
-            <?php get_title();?>
+            <?php add_title();?>
         </title>
         <link rel="stylesheet" href="/main.css">
         <link href="https://fonts.googleapis.com/css?family=Cabin:400,700" rel="stylesheet" type="text/css" media="all">
@@ -13,13 +13,13 @@
 
     <body>
         <div id="header">
-            <?php include 'header.php';?>
+            <?php get_header();?>
         </div>
         <div id="content">
             <?php get_content();?>
         </div>
         <div id="footer">
-            <?php include 'footer.php';?>
+            <?php get_footer();?>
         </div>
     </body>
 
