@@ -18,7 +18,6 @@ function set_page_constants() {
         $file = $folder_root . $folder_content . $path . '.html';
     }
     else {
-        //$path = '404';
         $title = '404 - Page Not Found';
         $file = $folder_root . '404.php';
     }
@@ -29,7 +28,7 @@ function set_page_constants() {
 
 set_page_constants(); //sets PAGE_PATH, PAGE_TITLE, PAGE_CONTENT
 
-function add_title() {
+function get_title() {
     echo PAGE_TITLE;
 }
 
@@ -38,7 +37,6 @@ function get_header() {
 }
 
 function get_content() {
-    echo PAGE_PATH;
     include PAGE_CONTENT;
 }
 
