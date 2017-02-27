@@ -1,5 +1,8 @@
 <?php
 
+//create global page object
+//$page_constants = ...;
+
 $page_paths = ['/','about','activities','destination','planning','gallery','contact']; //paths available in URL for users to access. NOTE: error pages not included
 
 function set_page_constants() {
@@ -18,6 +21,7 @@ function set_page_constants() {
         $file = $folder_root . $folder_content . $path . '.html';
     }
     else {
+        $path = '404';
         $title = '404 - Page Not Found';
         $file = $folder_root . '404.php';
     }
@@ -28,13 +32,43 @@ function set_page_constants() {
 
 set_page_constants(); //sets PAGE_PATH, PAGE_TITLE, PAGE_CONTENT
 
-function get_title() {
+function title() {
     echo PAGE_TITLE;
 }
+
+//HEADER//
 
 function get_header() {
     include 'resources/header.php';
 }
+
+function hero_title() {
+    switch(PAGE_PATH) {
+        case "home":
+            echo 'Welcome to the Wilderness';
+            break;
+        case "404":
+            echo PAGE_TITLE;
+            break;
+        default:
+            echo ucfirst(PAGE_PATH);
+    }
+}
+
+function call_button() {
+    switch (PAGE_PATH) {
+        case "home":
+            echo '<a href="#explore" class="btn-scroll btn-large btn"> Explore </a>';
+            break;
+        case "404":
+            echo '<a href="/" class="btn-large btn"> Home </a>';
+            break;
+        default:
+            break;
+    }
+}
+
+//END HEADER//
 
 function get_content() {
     include PAGE_CONTENT;
@@ -43,5 +77,6 @@ function get_content() {
 function get_footer() {
     include 'resources/footer.php';
 }
+
 
 ?>

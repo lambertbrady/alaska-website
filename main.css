@@ -940,16 +940,20 @@ a {
 
 #header {
     position: relative;
-    width: 100%;
-    height: 100vh;
 }
 
-#header > div {
+#header > div,
+.hero {
+    height: 350px;
+}
+
+#header > div > div:not(.hero) {
     width: 100%;
     height: 100%;
 }
 
 .hero {
+    width: 100%;
     position: fixed;
     z-index: -1;
 }
@@ -958,8 +962,8 @@ a {
     position: absolute;
     width: 100%;
     height: 100%;
-    background-image: url(images/home/hero.jpg);
     background-size: cover;
+    background-image: url(images/home/pano-mountains.jpg);
     background-position: 0 65%;
 }
 
@@ -1019,13 +1023,111 @@ a {
     background-color: #FF3D00;
 }
 
-.page-title h1,
-.page-title h2,
-.page-title h3,
-.page-title h4 {
+.hero-title h1,
+.hero-title h2,
+.hero-title h3,
+.hero-title h4 {
     max-width: 65%;
     text-shadow: 0px 0px 10px rgba(100, 100, 100, 1);
 }
+
+
+/*=== Header: PAGES */
+
+
+/*====== Header: 404 */
+
+#header > #header-404,
+#header-404 .hero {
+    height: 80vh;
+}
+
+#header-404 .hero-image {
+    background-image: url(images/home/hiking-clouds.jpg);
+}
+
+
+/*====== END Header: 404 */
+
+
+/*====== Header: HOME */
+
+#header > #header-home,
+#header-home .hero {
+    height: 100vh;
+}
+
+#header-home .hero-image {
+    background-image: url(images/home/landscape-reflection.jpg);
+    background-position: 0 65%;
+}
+
+
+/*====== END Header: HOME */
+
+
+/*====== Header: ABOUT */
+
+#header-about .hero-image {
+    background-image: url(images/home/pano-mountains.jpg);
+}
+
+
+/*====== END Header: ABOUT */
+
+
+/*====== Header: DESTINATION */
+
+#header-destination .hero-image {
+    background-image: url(images/home/pano-mountains.jpg);
+}
+
+
+/*====== END Header: DESTINATION */
+
+
+/*====== Header: ACTIVITIES */
+
+#header-activities .hero-image {
+    background-image: url(images/home/pano-mountains.jpg);
+}
+
+
+/*====== END Header: ACTIVITES */
+
+
+/*====== Header: PLANNING */
+
+#header-planning .hero-image {
+    background-image: url(images/home/pano-mountains.jpg);
+}
+
+
+/*====== END Header: PLANNING */
+
+
+/*====== Header: GALLERY */
+
+#header-gallery .hero-image {
+    background-image: url(images/home/pano-mountains.jpg);
+}
+
+
+/*====== END Header: GALLERY */
+
+
+/*====== Header: CONTACT */
+
+#header-contact .hero-image {
+    background-image: url(images/home/pano-mountains.jpg);
+    /*    background-position: 0 65%;*/
+}
+
+
+/*====== END Header: CONTACT */
+
+
+/*=== END Header: PAGES */
 
 
 /* END HEADER ==========================================================================*/
