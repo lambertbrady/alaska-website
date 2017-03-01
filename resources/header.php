@@ -12,36 +12,19 @@
             <div class="flex-spacer"></div>
             <div class="nav-header">
                 <ul class="flex-container-row">
-                    <li>
-                        <a href="/about"> About </a>
-                    </li>
-                    <li>
-                        <a href="/destination"> Destination </a>
-                    </li>
-                    <li>
-                        <a href="/activities"> Activities </a>
-                    </li>
-                    <li>
-                        <a href="/planning"> Planning </a>
-                    </li>
-                    <li>
-                        <a href="/gallery"> Gallery </a>
-                    </li>
-                    <li>
-                        <a href="/contact"> Contact </a>
-                    </li>
+                    <?php add_nav_list();?>
                 </ul>
             </div>
         </div>
         <div class="flex-spacer"></div>
-        <div class="hero-title center-children">
+        <div class="hero-text center-children">
             <h1 class="primary-light">
-                <?php hero_title(); ?>
+                <?php add_hero_text(); ?>
             </h1>
             <!--SVG image of Alaska-->
         </div>
         <div class="call-button center-inline wrapper">
-            <?php call_button(); ?>
+            <?php add_call_button(); ?>
         </div>
         <div class="flex-spacer"></div>
     </div>

@@ -1,9 +1,24 @@
 <?php
 
-//create global page object
-//$page_constants = ...;
+//VARIABLES//
 
-$page_paths = ['/','about','activities','destination','planning','gallery','contact']; //paths available in URL for users to access. NOTE: error pages not included
+$page_paths = ['about','activities','destination','planning','gallery','contact']; //paths available in URL for users to access
+//NOTE: order of values in array determines order of items listed in header and footer navigation; error pages not included
+
+//END VARIABLES//
+
+
+//NAMING CONVENTIONS//
+
+//functions are named in all lowercase
+//functions are named using "_" to separate words
+//functions beginning with "get" are used to include files
+//functions beginning with "add" are used to echo html
+//constants are named in all caps
+//constants are named using "_" to separate words
+
+//END NAMING CONVENTIONS
+
 
 function set_page_constants() {
     global $page_paths; //any reference to the listed variables inside the current function will refer to the global version of the variable defined outside the current function
@@ -11,14 +26,13 @@ function set_page_constants() {
     $path = $output['path']; //'path' is the name of the query string variable, set in .htaccess
     $folder_root = 'resources/';
     $folder_content = 'content/';
-    if ($path!=NULL && in_array($path, $page_paths)) { //true if path entered by user found in list of available paths
-        if ($path == '/') {
-            $path = 'home'; //'home' isn't used directly as a value in $page_paths, but is the name of the file used for the homepage
-            $title = 'Lambert Wilderness';
-        } else {
-            $title = ucfirst($path) . ' - Lambert Wilderness';
-        }
+    $file = $folder_root . $folder_content . $path . '.html';
+    if ($path == '/') {
+        $path = 'home'; //'home' is the name of the file used for the homepage
+        $title = 'Lambert Wilderness';
         $file = $folder_root . $folder_content . $path . '.html';
+    } else if (file_exists($file) && in_array($path, $page_paths)) { //true if file exists and path entered by user found in list of available paths
+        $title = ucfirst($path) . ' - Lambert Wilderness';
     }
     else {
         $path = '404';
@@ -27,13 +41,22 @@ function set_page_constants() {
     }
     define(PAGE_PATH, $path);
     define(PAGE_TITLE, $title);
-    define(PAGE_CONTENT, $file); //defines constant to be included later when content should be included, so the url query and path information don't need to be retrieved again
+    define(PAGE_FILE, $file);
 }
 
-set_page_constants(); //sets PAGE_PATH, PAGE_TITLE, PAGE_CONTENT
+set_page_constants(); //sets PAGE_PATH, PAGE_TITLE, PAGE_FILE
 
-function title() {
+function add_title() {
     echo PAGE_TITLE;
+}
+
+function add_nav_list() {
+    global $page_paths;
+    foreach($page_paths as $path) {
+        $nav_link = '/' . $path;
+        $nav_text = ucfirst($path);
+        echo '<li> <a href="'. $nav_link . '">' . $nav_text .  '</a> </li>';
+    }
 }
 
 //HEADER//
@@ -42,7 +65,7 @@ function get_header() {
     include 'resources/header.php';
 }
 
-function hero_title() {
+function add_hero_text() {
     switch(PAGE_PATH) {
         case "home":
             echo 'Welcome to the Wilderness';
@@ -55,7 +78,7 @@ function hero_title() {
     }
 }
 
-function call_button() {
+function add_call_button() {
     switch (PAGE_PATH) {
         case "home":
             echo '<a href="#explore" class="btn-scroll btn-large btn"> Explore </a>';
@@ -71,7 +94,7 @@ function call_button() {
 //END HEADER//
 
 function get_content() {
-    include PAGE_CONTENT;
+    include PAGE_FILE;
 }
 
 function get_footer() {

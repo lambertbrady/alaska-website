@@ -1,24 +1,7 @@
 <div class="wrapper">
     <div class="nav-footer center-inline">
         <ul class="primary-dark-all">
-            <li>
-                <a href="/about"> About </a>
-            </li>
-            <li>
-                <a href="/destination"> Destination </a>
-            </li>
-            <li>
-                <a href="/activities"> Activities </a>
-            </li>
-            <li>
-                <a href="/planning"> Planning </a>
-            </li>
-            <li>
-                <a href="/gallery"> Gallery </a>
-            </li>
-            <li>
-                <a href="/contact"> Contact </a>
-            </li>
+            <?php add_nav_list();?>
         </ul>
     </div>
     <div class="copyright center-children">

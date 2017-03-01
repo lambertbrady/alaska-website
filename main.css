@@ -1023,10 +1023,10 @@ a {
     background-color: #FF3D00;
 }
 
-.hero-title h1,
-.hero-title h2,
-.hero-title h3,
-.hero-title h4 {
+.hero-text h1,
+.hero-text h2,
+.hero-text h3,
+.hero-text h4 {
     max-width: 65%;
     text-shadow: 0px 0px 10px rgba(100, 100, 100, 1);
 }
