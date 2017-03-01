@@ -1,1 +1,58 @@
-ErrorDocument 404 /404.php
+RewriteEngine On
+RewriteBase /
+
+RewriteCond %{REQUEST_FILENAME} -d [NC]
+RewriteCond %{REQUEST_URI} !=/
+RewriteRule ^.*$ /index.php [L]
+#IF DIRECTORY exists [case insensitive]
+#AND URI is not exactly "/"
+#THEN serve to "/index.php"
+
+
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)/+$ /$1 [L,R=301]
+#
+#IF DIRECTORY does not exist
+#AND URL ends in one or more occurences of "/" preceded by any values
+#THEN redirect permanently to URL replaced by the preceding values, so trailing slashes are removed
+
+
+RewriteCond %{THE_REQUEST} \s/index.php [NC]
+RewriteCond %{REQUEST_URI} !=/index.php
+RewriteRule ^.*$ /index.php [L,R=301]
+#
+#IF REQUEST includes "\s/index.php" [case insensitive]
+##NOTE: the white space character "\s" before "/" is intentional. This is because REQUEST is formatted as follows: "GET /some-path HTTP/1.1", so with the above condition only paths that begin with "/index.php" get targeted
+##NOTE: REQUEST is only updated on redirects, and is not affected by other Rule Rewrites, so when later rules serve reqests to "/index.php.*" the updated urls will not match on this condition
+#AND URI is not exactly "/index.php"
+#THEN redirect permanently to "/index.php"
+
+
+RewriteCond %{THE_REQUEST} \s/index.php [NC]
+RewriteCond %{REQUEST_URI} =/index.php
+RewriteCond %{QUERY_STRING} !=""
+RewriteRule ^.*$ /index.php? [L,R=301]
+#
+#IF REQUEST includes "\s/index.php" [case insensitive]
+#AND URI is exactly "/index.php"
+#AND QUERY STRING is not empty
+#THEN redirect permanently to "/index.php" with query strings removed
+
+
+RewriteCond %{REQUEST_URI} =/
+RewriteRule ^.*$ /index.php?path=/ [L]
+#
+#IF URI is exactly "/"
+#THEN serve to "/index.php" with query string "path=/"
+
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_URI} !=/index.php [NC]
+RewriteRule ^(.*)$ /index.php?path=$1 [NC,L]
+#
+#IF FILE does not exist
+#AND URI is not exactly "/index.php" [case insensitive]
+#THEN serve to "/index.php" with an added query string where "path" is equal to the original URI value
+
+
+ErrorDocument 403 /index.php?path=403

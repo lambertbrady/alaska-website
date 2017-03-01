@@ -886,24 +886,25 @@ a {
 
 .btn {
     display: inline-block;
-    color: #607D8B;
-    font-weight: 600;
-    background-color: #fff;
-    border-radius: 10px;
-    text-shadow: none;
+    font-weight: bold;
     text-transform: uppercase;
-    background-clip: padding-box;
+    text-shadow: none;
+    color: #607D8B;
+    background-color: #fff;
+    border: 2px solid #fff;
+    border-radius: 10px;
+    /*    background-clip: padding-box;*/
     transition: background .3s, color .3s;
 }
 
 .btn-small {
-    font-size: 1.2em;
-    padding: 10px 20px;
+    font-size: 1.2rem;
+    padding: 8px 18px;
 }
 
 .btn-large {
-    font-size: 1.4em;
-    padding: 12px 24px;
+    font-size: 1.4rem;
+    padding: 10px 22px;
 }
 
 .btn:hover {
@@ -939,16 +940,20 @@ a {
 
 #header {
     position: relative;
-    width: 100%;
-    height: 100vh;
 }
 
-#header > div {
+#header > div,
+.hero {
+    height: 350px;
+}
+
+#header > div > div:not(.hero) {
     width: 100%;
     height: 100%;
 }
 
 .hero {
+    width: 100%;
     position: fixed;
     z-index: -1;
 }
@@ -957,8 +962,8 @@ a {
     position: absolute;
     width: 100%;
     height: 100%;
-    background-image: url(images/home/hero.jpg);
     background-size: cover;
+    background-image: url(images/pano-mountains.jpg);
     background-position: 0 65%;
 }
 
@@ -1018,18 +1023,111 @@ a {
     background-color: #FF3D00;
 }
 
-.page-title {
-    flex-grow: 1;
-}
-
-.page-title h1,
-.page-title h2,
-.page-title h3,
-.page-title h4 {
-    flex-grow: .1;
+.hero-text h1,
+.hero-text h2,
+.hero-text h3,
+.hero-text h4 {
     max-width: 65%;
     text-shadow: 0px 0px 10px rgba(100, 100, 100, 1);
 }
+
+
+/*=== Header: PAGES */
+
+
+/*====== Header: 404 */
+
+#header > #header-404,
+#header-404 .hero {
+    height: 80vh;
+}
+
+#header-404 .hero-image {
+    background-image: url(images/hiking-clouds.jpg);
+}
+
+
+/*====== END Header: 404 */
+
+
+/*====== Header: HOME */
+
+#header > #header-home,
+#header-home .hero {
+    height: 100vh;
+}
+
+#header-home .hero-image {
+    background-image: url(images/landscape-reflection.jpg);
+    background-position: 0 65%;
+}
+
+
+/*====== END Header: HOME */
+
+
+/*====== Header: ABOUT */
+
+#header-about .hero-image {
+    background-image: url(images/pano-mountains.jpg);
+}
+
+
+/*====== END Header: ABOUT */
+
+
+/*====== Header: DESTINATION */
+
+#header-destination .hero-image {
+    background-image: url(images/pano-mountains.jpg);
+}
+
+
+/*====== END Header: DESTINATION */
+
+
+/*====== Header: ACTIVITIES */
+
+#header-activities .hero-image {
+    background-image: url(images/pano-mountains.jpg);
+}
+
+
+/*====== END Header: ACTIVITES */
+
+
+/*====== Header: PLANNING */
+
+#header-planning .hero-image {
+    background-image: url(images/pano-mountains.jpg);
+}
+
+
+/*====== END Header: PLANNING */
+
+
+/*====== Header: GALLERY */
+
+#header-gallery .hero-image {
+    background-image: url(images/pano-mountains.jpg);
+}
+
+
+/*====== END Header: GALLERY */
+
+
+/*====== Header: CONTACT */
+
+#header-contact .hero-image {
+    background-image: url(images/pano-mountains.jpg);
+    /*    background-position: 0 65%;*/
+}
+
+
+/*====== END Header: CONTACT */
+
+
+/*=== END Header: PAGES */
 
 
 /* END HEADER ==========================================================================*/
@@ -1074,32 +1172,32 @@ a {
 
 .gallery div:nth-of-type(1) div:nth-of-type(1) {
     margin: 0 3px 3px 0;
-    background-image: url(images/home/hiking-glacier.jpg);
+    background-image: url(images/hiking-glacier.jpg);
     background-position: 50% 75%;
 }
 
 .gallery div:nth-of-type(1) div:nth-of-type(2) {
     margin-right: 3px;
-    background-image: url(images/home/landscape-glacier.jpg);
+    background-image: url(images/landscape-glacier.jpg);
     background-position: 50% 70%;
 }
 
 .gallery div:nth-of-type(1) div:nth-of-type(3) {
     flex-grow: 2;
-    background-image: url(images/home/hiking-rainbow.jpg);
+    background-image: url(images/hiking-rainbow.jpg);
     background-position: 50% 15%;
 }
 
 .gallery div:nth-of-type(2) div:nth-of-type(1) {
     margin-right: 3px;
     flex-grow: 2;
-    background-image: url(images/home/pano-mountains.jpg);
+    background-image: url(images/pano-mountains.jpg);
     background-position: 35% 50%;
 }
 
 .gallery div:nth-of-type(2) div:nth-of-type(2) {
     flex-grow: 1;
-    background-image: url(images/home/hiking-valley.jpg);
+    background-image: url(images/hiking-valley.jpg);
     background-position: 50% 95%;
 }
 
