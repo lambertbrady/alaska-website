@@ -1,9 +1,6 @@
 <html>
 
-<?php
-    include 'resources/functions.php';
-?>
-
+<?php include 'resources/functions.php'; ?>
 
     <head>
         <title>

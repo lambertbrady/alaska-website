@@ -1,13 +1,5 @@
 <?php
 
-//PAGE VARIABLES//
-
-$page_paths = ['about','activities','destination','planning','gallery','contact']; //paths available in URL for users to access
-//NOTE: order of values in array determines order of items listed in header and footer navigation; error pages not included
-
-//END PAGE VARIABLES//
-
-
 //NAMING CONVENTIONS//
 
 //functions are named in all lowercase
@@ -19,6 +11,14 @@ $page_paths = ['about','activities','destination','planning','gallery','contact'
 
 //END NAMING CONVENTIONS
 
+//VARIABLES//
+
+$page_paths = ['about','activities','destination','planning','gallery','contact']; //paths available in URL for users to access
+//NOTE: order of values in array determines order of items listed in header and footer navigation; error pages not included
+
+//END VARIABLES//
+
+//CONSTANTS//
 
 function set_page_constants() {
     global $page_paths; //any reference to the listed variables inside the current function will refer to the global version of the variable defined outside the current function
@@ -45,6 +45,8 @@ function set_page_constants() {
 }
 
 set_page_constants(); //sets PAGE_PATH, PAGE_TITLE, PAGE_FILE
+
+//CONSTANTS//
 
 //TITLE//
 
@@ -107,13 +109,20 @@ function add_call_button() {
 
 //END HEADER//
 
+//CONTENT//
+
 function get_content() {
     include PAGE_FILE;
 }
+
+//END CONTENT//
+
+//FOOTER//
 
 function get_footer() {
     include 'resources/footer.php';
 }
 
+//END FOOTER//
 
 ?>

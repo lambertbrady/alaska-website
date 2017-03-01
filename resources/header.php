@@ -1,6 +1,5 @@
 <div id="<?php echo 'header-' . PAGE_PATH; ?>">
     <div class="hero">
-        <!--        dynamic-->
         <div class="hero-image"> </div>
         <div class="hero-overlay"> </div>
     </div>
