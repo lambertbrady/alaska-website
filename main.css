@@ -1039,7 +1039,10 @@ a {
 
 #header > #header-404,
 #header-404 .hero {
-    height: 80vh;
+    height: 100vh;
+    /* default in case 'calc()' is unsuccessful below */
+    height: calc(100vh - 95px);
+    /* view height minus height of footer */
 }
 
 #header-404 .hero-image {
