@@ -1,11 +1,11 @@
 <?php
 
-//VARIABLES//
+//PAGE VARIABLES//
 
 $page_paths = ['about','activities','destination','planning','gallery','contact']; //paths available in URL for users to access
 //NOTE: order of values in array determines order of items listed in header and footer navigation; error pages not included
 
-//END VARIABLES//
+//END PAGE VARIABLES//
 
 
 //NAMING CONVENTIONS//
@@ -46,18 +46,32 @@ function set_page_constants() {
 
 set_page_constants(); //sets PAGE_PATH, PAGE_TITLE, PAGE_FILE
 
+//TITLE//
+
 function add_title() {
     echo PAGE_TITLE;
 }
 
+//END TITLE//
+
+
+//NAVIGATION//
+
+$nav_list = '';
+
 function add_nav_list() {
-    global $page_paths;
-    foreach($page_paths as $path) {
-        $nav_link = '/' . $path;
-        $nav_text = ucfirst($path);
-        echo '<li> <a href="'. $nav_link . '">' . $nav_text .  '</a> </li>';
+    global $page_paths, $nav_list;
+    if ($nav_list == '') { //makes sure nav_list string is only put together once for each page load - this way the footer navigation can use the same variable as the header navigation
+        foreach($page_paths as $path) {
+            $nav_link = '/' . $path;
+            $nav_text = ucfirst($path);
+            $nav_list = $nav_list . '<li> <a href="'. $nav_link . '">' . $nav_text .  '</a> </li>';
+        }
     }
+    echo $nav_list;
 }
+
+//END NAVIGATION//
 
 //HEADER//
 
