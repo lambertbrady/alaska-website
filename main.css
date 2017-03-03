@@ -706,6 +706,24 @@ template {
 /* END NORMALIZE ==========================================================================*/
 
 
+/*SCREEN RESOLUTION*/
+
+
+/*Max = 1920px by 1080px*/
+
+
+/*Min = 320px by 480px */
+
+
+/*Chromebook = 1366 x 631*/
+
+
+/*MacBook Pro = 1280 x 676*/
+
+
+/*END SCREEN RESOLUTION*/
+
+
 /*TAGS*/
 
 * {
@@ -1158,8 +1176,6 @@ a {
     max-width: 75rem;
 }
 
-.welcome span {}
-
 .gallery {
     position: relative;
     background-color: #fff;
@@ -1167,7 +1183,9 @@ a {
 
 .gallery div div {
     flex-grow: 1;
-    height: 313px;
+    min-height: 266px;
+    height: calc((100vh - 100px) / 2);
+    /* view height minus height of footer (95px) minus margin (3px) minus 2px for a little space on top, all divided by 2 since there are two rows. This ensures that the full gallery section is displayed when a user scrolls to the very bottom of the page*/
     background-size: cover;
     background-position: center;
     /*    filter: saturate(110%);*/
@@ -1175,32 +1193,32 @@ a {
 
 .gallery div:nth-of-type(1) div:nth-of-type(1) {
     margin: 0 3px 3px 0;
-    background-image: url(images/hiking-glacier.jpg);
+    background-image: url(images/hiking-glacier-653w-490h.jpg);
     background-position: 50% 75%;
 }
 
 .gallery div:nth-of-type(1) div:nth-of-type(2) {
     margin-right: 3px;
-    background-image: url(images/landscape-glacier.jpg);
+    background-image: url(images/landscape-glacier-653w-490h.jpg);
     background-position: 50% 70%;
 }
 
 .gallery div:nth-of-type(1) div:nth-of-type(3) {
     flex-grow: 2;
-    background-image: url(images/hiking-rainbow.jpg);
+    background-image: url(images/hiking-rainbow-960w-720h.jpg);
     background-position: 50% 15%;
 }
 
 .gallery div:nth-of-type(2) div:nth-of-type(1) {
     margin-right: 3px;
     flex-grow: 2;
-    background-image: url(images/pano-mountains-1920w-516h.jpg);
+    background-image: url(images/pano-mountains-1824w-490h.jpg);
     background-position: 35% 50%;
 }
 
 .gallery div:nth-of-type(2) div:nth-of-type(2) {
     flex-grow: 1;
-    background-image: url(images/hiking-valley.jpg);
+    background-image: url(images/hiking-valley-653w-490h.jpg);
     background-position: 50% 95%;
 }
 
