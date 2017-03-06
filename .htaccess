@@ -46,10 +46,10 @@ RewriteRule ^.*$ /index.php?path=/ [L]
 #THEN serve to "/index.php" with query string "path=/"
 
 RewriteCond %{REQUEST_FILENAME} -f
-RewriteRule ^.*(\.md)$ /index.php?path=$1
+RewriteRule ^.*(\.md)$ /index.php?path=$1 [NC,L]
 #
 #IF FILE exists
-#AND URL ends with ".md"
+#AND URL ends with ".md" [case insensitive]
 #THEN serve to "index.php" with an added query string where "path" is equal to the ".md" file extention
 ##NOTE: this is specifically meant to handle the "README.md" file used in github, which needs to stay in the root directory
 
