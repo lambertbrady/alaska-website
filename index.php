@@ -7,7 +7,7 @@
         <title>
             <?php add_title();?>
         </title>
-        <meta name="description" content="Lambert Wilderness Alaskan adventures. Offering guided base camp hiking tours in the Alaska Range.">
+        <meta name="description" content="Lambert Wilderness Alaskan mountain adventures. Offering guided base camp hiking tours in the Alaska Range.">
         <meta property="og:title" content="Lambert Wilderness">
         <meta property="og:type" content="website">
         <meta property="og:image" content="http://www.lambertwilderness.com/images/landscape-glacier2-200w-200h.jpg">
@@ -15,7 +15,7 @@
         <meta property="og:image:height" content="200">
         <meta property="og:url" content="http://www.lambertwilderness.com/">
         <meta property="og:site_name" content="Lambert Wilderness">
-        <meta property="og:description" content="Lambert Wilderness Alaskan adventures. Offering guided base camp hiking tours in the Alaska Range.">
+        <meta property="og:description" content="Lambert Wilderness Alaskan mountain adventures. Offering guided base camp hiking tours in the Alaska Range.">
         <!--        <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">-->
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="/vendors/reset.css">
