@@ -1,6 +1,6 @@
 # Summary
 
-This repository contains the code used for the website of Lambert Woodriver Camp LLC (LWC), http://www.lambertwilderness.com/, which offers wilderness tours in the Alaska Range. Everything is custom designed and built by Brady Lambert [(me)](https://github.com/lambertbrady) using CSS, HTML, JavaScript, and PHP. I'm also writing all of the content, and I've taken almost all of the photographs used on the site.
+This repository contains the code used for the website of Lambert Woodriver Camp LLC (LWC), [lambertwilderness.com](http://www.lambertwilderness.com/), which offers wilderness tours in the Alaska Range. Everything is custom designed and built by Brady Lambert [(me)](https://github.com/lambertbrady) using CSS, HTML, JavaScript, and PHP. I'm also writing all of the content, and I've taken almost all of the photographs used on the site.
 
 # Front End
 
