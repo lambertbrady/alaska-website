@@ -14,6 +14,8 @@ Everything else can be found in [main.css](../master/main.css), which is entirel
 
 I have done my best to use best practices and new technologies that can make styles more easily maintainable, while still functional in slightly older browsers. For example, I avoid the *float* property, which can have unintended and nonintuitive consequences if not cleared properly.
 
+#### Flexbox
+
 I've also used *Flexbox* in places where more traditional layout options are not well-suited. The best example of this can be found in the *.gallery* preview section on the Home page, where I stack two flex rows on top of each other. Images are then placed inside each row as flex items. The main advantage of this is that the width of each image can be easily calculated relative to one another. Instead of calculating percentages, I add a *flex-grow* value to each element. This strategy also lends itself to responsive design - I can easily change the *flex-flow* from row to column, and update the amount of space each element takes up, depending on screen resolution.
 
 *Flexbox* is a valuable tool for centering items, as well, especially vertically. Rather than the standard hack of moving elements up and then adding the *transform* property, I have added a *.flex-spacer* class to easily center items. This strategy is used in the *#header* section, for example, to vertically center the *.hero-text* element. This works especially well because it allows for other elements, such as *.call-button*, to be included dynamically for certain pages, without having to overwrite styles. See the [Home page](http://www.lambertwilderness.com/) and [404 page](http://www.lambertwilderness.com/404) for examples.
@@ -22,7 +24,11 @@ I've also used *Flexbox* in places where more traditional layout options are not
 
 All JavaScript can be found in [main.js](../master/main.js).
 
-Currently, the only JavaScript being used is for a custom smooth-scroll button, which is used on the [Home page](http://www.lambertwilderness.com/) for the "Explore" call to action button. 
+#### Smooth Scroll Button
+
+Currently, the Smooth Scroll Button is used only on the [Home page](http://www.lambertwilderness.com/) for the "Explore" call to action button, but it can be added to any desired page by including the *.btn-scroll* class. An element with this class must also have an anchor tag associated with the id for the desired target element. For example, a scroll button would have markup with the format *\<a href="#target-id" class="btn-scroll">Button Text\</a>*, where *#target-id* refers to the id of the element that should be scrolled to.
+
+Normally, clicking this anchor would jump the page down to the target element. However, this default behavior is prevented, so that when a click event is registered on the button the *animateScroll()* function is called. This function takes as an argument the current distance of the target element from the top of the viewport, in order to determine the *scrollDirection* (whether the page should be scrolled up, down, or not at all) and the *scrollDistance* (in pixels).
 
 # Back End
 
