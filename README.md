@@ -62,3 +62,15 @@ However, there is one [additional .htaccess file](../master/resources/.htaccess)
 
 ### index.php
 
+Although everything goes through index.php, the page is fairly simple. It includes [functions.php](../master/resources/functions.php) (more on that below) at the beginning of the file, above the *head* tag. This way several functions can be used to grab content based on the page's URL.
+
+#### head
+
+The *add_title()* function is used to get the page title, and is added within the *title* tag. Below this are several [Open Graph](http://ogp.me/) meta tags used fo social media. Of course, stylesheets and javascript files are included, along with the [Cabin font](https://fonts.google.com/specimen/Cabin) from Google Fonts.
+
+#### body
+
+The *body* is separated into three parts, each of which have an associated id. They are *header*, *content*, and *footer*, from top to bottom. The html for each section is loaded using one of the following PHP functions, respectively: *get_header()*, *get_content()*, and *get_footer()*.
+
+### functions.php
+
