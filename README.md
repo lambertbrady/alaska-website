@@ -28,7 +28,7 @@ All JavaScript can be found in [main.js](../master/main.js).
 
 Currently, the Smooth Scroll Button is used only on the [Home page](http://www.lambertwilderness.com/) for the "Explore" call to action button, but it can be added to any desired page by including the *.btn-scroll* class. An element with this class must also have an anchor tag associated with the id for the desired target element. For example, a scroll button would have markup with the format *\<a href="#target-id" class="btn-scroll">Button Text\</a>*, where *#target-id* refers to the id of the element that should be scrolled to.
 
-Normally, clicking this anchor would jump the page down to the target element. However, this default behavior is prevented, so that when a click event is registered on the button the *animateScroll()* function is called. This function takes as an argument the current distance of the target element from the top of the viewport, in order to determine the *scrollDirection* (whether the page should be scrolled up, down, or not at all) and the *scrollDistance* (in pixels). These values are then used to determine the *scrollSpeed* and the number of *timeSteps* needed to complete the scroll animation.
+Normally, clicking this anchor would jump the page down to the target element (<a name="top"> [like this](#target) </a>). However, this default behavior is prevented, so that when a click event is registered on the button the *animateScroll()* function is called. This function takes as an argument the current distance of the target element from the top of the viewport, in order to determine the *scrollDirection* (whether the page should be scrolled up, down, or not at all) and the *scrollDistance* (in pixels). These values are then used to determine the *scrollSpeed* and the number of *timeSteps* needed to complete the scroll animation.
 
 The *scrollSpeed* is calculated, in pixels per millisecond, as a linear function of the *scrollDistance*. In general, the farther the page needs to be scrolled to reach the target element, the faster the scroll speed will be. However, minimum and maximum speeds are also defined (*minScrollSpeed* and *maxScrollSpeed*) to handle very small or large scroll distances. The number of *timeSteps* are also determined linearly as a function of the *scrollDistance*, with a minimum value (*minTimeSteps*) but no maximum.
 
@@ -38,7 +38,9 @@ The key to making Smooth Scroll work well is balance. Ideally, the smallest poss
 
 This is why, as mentioned above, the *timeSteps* value is calculated linearly. These *timeSteps* are directly correlated to the size of scroll increments applied using *window.scrollBy*. For small scroll distances, these increments need to be smaller to avoid visible jumps. Conversely, larger scroll distances need larger increments to avoid sluggishness from too many calculations. The larger jumps are less noticable due to faster scroll speeds and larger distances traveled.
 
-In other words, the size of a scroll increment is directly proportional to the distance that needs to be scrolled. I thoroughly enjoyed tinkering with the equations to make the animation look as smooth as possible in as many situations as possible. 
+In other words, the size of a scroll increment is directly proportional to the distance that needs to be scrolled. I thoroughly enjoyed tinkering with the equations to make the animation look as smooth as possible in as many situations as possible.
+
+<a name="target">[Back up!](#top)</a>
 
 # Back End
 
