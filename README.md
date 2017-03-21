@@ -8,7 +8,7 @@ The main goal of the site is to direct visitors to the Contact page, where they 
 
 ### CSS
 
-All styles are custom, with the exception of [reset.css](http://meyerweb.com/eric/tools/css/reset/) and [normalize.css](github.com/necolas/normalize.css). These files are included to get rid of browser inconsistencies, and can be found in the [vendors folder](../master/vendors/).
+All styles are custom, with the exception of [reset.css](http://meyerweb.com/eric/tools/css/reset/) and [normalize.css](github.com/necolas/normalize.css). These files are included to get rid of browser inconsistencies, and can be found in the [vendors](../master/vendors/) folder.
 
 Everything else can be found in [main.css](../master/main.css), which is entirely custom. Vendor prefixes should be included where necessary, but I have not yet included media queries to make the site responsive. I will add these once higher-priority phases of the project are complete.
 
@@ -18,7 +18,7 @@ I have done my best to use best practices and new technologies that can make sty
 
 I've also used *Flexbox* in places where more traditional layout options are not well-suited. The best example of this can be found in the *.gallery* preview section on the Home page, where I stack two flex rows on top of each other. Images are then placed inside each row as flex items. The main advantage of this is that the width of each image can be easily calculated relative to one another. Instead of calculating percentages, I add a *flex-grow* value to each element. This strategy also lends itself to responsive design - I can easily change the *flex-flow* from row to column, and update the amount of space each element takes up, depending on screen resolution.
 
-*Flexbox* is a valuable tool for centering items, as well, especially vertically. Rather than the standard hack of moving elements up and then adding the *transform* property, I have added a *.flex-spacer* class to easily center items. This strategy is used in the *#header* section, for example, to vertically center the *.hero-text* element. This works especially well because it allows for other elements, such as *.call-button*, to be included dynamically for certain pages, without having to overwrite styles. See the [Home page](http://www.lambertwilderness.com/) and [404 page](http://www.lambertwilderness.com/404) for examples.
+*Flexbox* is a valuable tool for centering items, as well, especially vertically. Rather than the outdated hack of moving elements up and then adding the *transform* property, I have added a *.flex-spacer* class to easily center items. This strategy is used in the *#header* section, for example, to vertically center the *.hero-text* element. This works especially well because it allows for other elements, such as *.call-button*, to be included dynamically for certain pages, without having to overwrite styles. See the [Home page](http://www.lambertwilderness.com/) and [404 page](http://www.lambertwilderness.com/404) for examples.
 
 ### JavaScript
 
