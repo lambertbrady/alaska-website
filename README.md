@@ -30,6 +30,8 @@ Currently, the Smooth Scroll Button is used only on the [Home page](http://www.l
 
 Normally, clicking this anchor would jump the page down to the target element (<a name="top"> [like this](#target) </a>). However, this default behavior is prevented, so that when a click event is registered on the button the *animateScroll()* function is called. This function takes as an argument the current distance of the target element from the top of the viewport, in order to determine the *scrollDirection* (whether the page should be scrolled up, down, or not at all) and the *scrollDistance* (in pixels). These values are then used to determine the *scrollSpeed* and the number of *timeSteps* needed to complete the scroll animation.
 
+<a name="target">[Back up!](#top)</a>
+
 The *scrollSpeed* is calculated, in pixels per millisecond, as a linear function of the *scrollDistance*. In general, the farther the page needs to be scrolled to reach the target element, the faster the scroll speed will be. However, minimum and maximum speeds are also defined (*minScrollSpeed* and *maxScrollSpeed*) to handle very small or large scroll distances. The number of *timeSteps* are also determined linearly as a function of the *scrollDistance*, with a minimum value (*minTimeSteps*) but no maximum.
 
 Eventually, the page scroll is updated using *window.scrollBy*. Only four values are needed to animate the scroll: the time, which is updated in a loop; the initial property value; the final property value; and the duration of the animation. These values are passed as arguments to the *animateProperty()* function. This function is general - in this case it is used to animate a page's scroll position, but it can be used to animate any other property, as well (e.g., opacity). The function also takes advantage of customizable timing functions, which are built from [Bezier Curves](http://cubic-bezier.com/). In this case, *easeInoutSine()* is used, which looks something like [this](http://easings.net/#easeInOutSine).
@@ -39,8 +41,6 @@ The key to making Smooth Scroll work well is balance. Ideally, the smallest poss
 This is why, as mentioned above, the *timeSteps* value is calculated linearly. These *timeSteps* are directly correlated to the size of scroll increments applied using *window.scrollBy*. For small scroll distances, these increments need to be smaller to avoid visible jumps. Conversely, larger scroll distances need larger increments to avoid sluggishness from too many calculations. The larger jumps are less noticable due to faster scroll speeds and larger distances traveled.
 
 In other words, the size of a scroll increment is directly proportional to the distance that needs to be scrolled. I thoroughly enjoyed tinkering with the equations to make the animation look as smooth as possible in as many situations as possible.
-
-<a name="target">[Back up!](#top)</a>
 
 # Back End
 
