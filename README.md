@@ -1,6 +1,6 @@
 # Summary
 
-This repository contains the code used for the website of Lambert Woodriver Camp LLC (LWC), [lambertwilderness.com](http://www.lambertwilderness.com/), which offers wilderness tours in the Alaska Range. Everything is custom designed and built by Brady Lambert [(me)](https://github.com/lambertbrady) using CSS, HTML, JavaScript, and PHP. I'm also writing all of the content, and I've taken almost all of the photographs used on the site.
+This repository contains the code used for the website of Lambert Woodriver Camp LLC (LWC), [lambertwilderness.com](http://www.lambertwilderness.com/), which offers wilderness tours in the Alaska Range. Everything is custom designed and built by Brady Lambert ([me](https://github.com/lambertbrady)) using CSS, HTML, JavaScript, and PHP. I'm also writing all of the content, and I've taken almost all of the photographs used on the site.
 
 # Front End
 
@@ -28,7 +28,17 @@ All JavaScript can be found in [main.js](../master/main.js).
 
 Currently, the Smooth Scroll Button is used only on the [Home page](http://www.lambertwilderness.com/) for the "Explore" call to action button, but it can be added to any desired page by including the *.btn-scroll* class. An element with this class must also have an anchor tag associated with the id for the desired target element. For example, a scroll button would have markup with the format *\<a href="#target-id" class="btn-scroll">Button Text\</a>*, where *#target-id* refers to the id of the element that should be scrolled to.
 
-Normally, clicking this anchor would jump the page down to the target element. However, this default behavior is prevented, so that when a click event is registered on the button the *animateScroll()* function is called. This function takes as an argument the current distance of the target element from the top of the viewport, in order to determine the *scrollDirection* (whether the page should be scrolled up, down, or not at all) and the *scrollDistance* (in pixels).
+Normally, clicking this anchor would jump the page down to the target element. However, this default behavior is prevented, so that when a click event is registered on the button the *animateScroll()* function is called. This function takes as an argument the current distance of the target element from the top of the viewport, in order to determine the *scrollDirection* (whether the page should be scrolled up, down, or not at all) and the *scrollDistance* (in pixels). These values are then used to determine the *scrollSpeed* and the number of *timeSteps* needed to complete the scroll animation.
+
+The *scrollSpeed* is calculated, in pixels per millisecond, as a linear function of the *scrollDistance*. In general, the farther the page needs to be scrolled to reach the target element, the faster the scroll speed will be. However, minimum and maximum speeds are also defined (*minScrollSpeed* and *maxScrollSpeed*) to handle very small or large scroll distances. The number of *timeSteps* are also determined linearly as a function of the *scrollDistance*, with a minimum value (*minTimeSteps*) but no maximum.
+
+Eventually, the page scroll is updated using *window.scrollBy*. Only four values are needed to animate the scroll: the time, which is updated in a loop; the initial property value; the final property value; and the duration of the animation. These values are passed as arguments to the *animateProperty()* function. This function is general - in this case it is used to animate a page's scroll position, but it can be used to animate any other property, as well (e.g., opacity). The function also takes advantage of customizable timing functions, which are built from [Bezier Curves](http://cubic-bezier.com/). In this case, *easeInoutSine()* is used, which looks something like [this](http://easings.net/#easeInOutSine).
+
+The key to making Smooth Scroll work well is balance. Ideally, the smallest possible increments would be used to make the animation look as smooth as possible. These increments are, at the most basic level, limited by the size of a pixel. However, speed becomes a problem before that limit is reached. If too many calculations and updates are made, the animation will look choppy. Thus, it is imperative to animate properties such that there aren't so many calculations happening where the page is noticably slowed, but where there are enough increments to give the illusion of a smooth transition.
+
+This is why, as mentioned above, the *timeSteps* value is calculated linearly. These *timeSteps* are directly correlated to the size of scroll increments applied using *window.scrollBy*. For small scroll distances, these increments need to be smaller to avoid visible jumps. Conversely, larger scroll distances need larger increments to avoid sluggishness from too many calculations. The larger jumps are less noticable due to faster scroll speeds and larger distances traveled.
+
+In other words, the size of a scroll increment is directly proportional to the distance that needs to be scrolled. I thoroughly enjoyed tinkering with the equations to make the animation look as smooth as possible in as many situations as possible. 
 
 # Back End
 
