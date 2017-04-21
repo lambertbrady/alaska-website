@@ -650,3 +650,54 @@ a {
 
 
 /* END 404 ==========================================================================*/
+
+
+/*About*/
+
+#page-about {
+    position: relative;
+    background-color: #fff;
+    width: 100%;
+}
+
+.history,
+.bill-quote {
+    justify-content: space-around;
+}
+
+.history div:first-child,
+.bill-quote div:last-child {
+    flex-grow: 1;
+    margin: 0 2em;
+    background-size: cover;
+    background-position: center;
+}
+
+.history div:last-child,
+.bill-quote div:first-child {
+    flex-grow: 0;
+    padding: 2em;
+}
+
+.history div:first-child {
+    background-image: url(images/hiking-glacier-200w-200h.jpg);
+}
+
+.history div:last-child {
+    width: 60%;
+}
+
+.bill-quote div:first-child {
+    width: 40%;
+}
+
+.bill-quote div:last-child {
+    height: 300px;
+    background-position: 50% 65%;
+    background-image: url(images/hiking-glacier-653w-490h.jpg);
+}
+
+.our-vision {}
+
+
+/* END About ==========================================================================*/
