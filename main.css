@@ -268,7 +268,10 @@ form {
     font-size: 1.8em;
     font-weight: normal;
     line-height: 1.2222em;
-    margin: .5em 0;
+}
+
+form > .flex-container-row {
+    flex-wrap: wrap;
 }
 
 form > div:last-child {
@@ -278,18 +281,12 @@ form > div:last-child {
 input,
 textarea {
     flex-grow: 1;
-    margin-bottom: 2rem;
-    margin-right: 2%;
+    margin: 1rem 2%;
     padding: 1.1rem 1.5rem;
     border: 2px solid rgba(0, 0, 0, .6854);
     border-radius: 3px;
     -webkit-transition: background .2s;
     transition: background .2s;
-}
-
-input:last-child,
-textarea:last-child {
-    margin-right: 0;
 }
 
 input:focus,
@@ -305,7 +302,6 @@ textarea:focus {
 
 input[type="submit"] {
     flex-grow: 0;
-    margin: 0;
     font-weight: bold;
     text-transform: uppercase;
     color: #fff;
@@ -769,3 +765,15 @@ input[type="submit"]:hover {
 
 
 /* END About ==========================================================================*/
+
+
+/*Contact*/
+
+#page-contact {
+    position: relative;
+    background-color: #fff;
+    width: 100%;
+}
+
+
+/* END Contact ==========================================================================*/
