@@ -32,7 +32,7 @@ function set_page_constants() {
         $title = 'Lambert Wilderness';
         $file = $folder_root . $folder_content . $path . '.html';
     } else if (file_exists($file) && in_array($path, $page_paths)) { //true if file exists and path entered by user found in list of available paths
-        $title = ucfirst($path) . ' - Lambert Wilderness';
+        $title = ucfirst($path) . ' | Lambert Wilderness';
     }
     else {
         $path = '404';

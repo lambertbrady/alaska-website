@@ -259,6 +259,70 @@ a {
 /* END FLEX ==========================================================================*/
 
 
+/*FORM & INPUT*/
+
+form {
+    position: relative;
+    width: 100%;
+    max-width: 85rem;
+    font-size: 1.8em;
+    font-weight: normal;
+    line-height: 1.2222em;
+}
+
+form > .flex-container-row {
+    flex-wrap: wrap;
+}
+
+form > div:last-child {
+    justify-content: space-around;
+}
+
+input,
+textarea {
+    flex-grow: 1;
+    margin: 1rem 2%;
+    padding: 1.1rem 1.5rem;
+    border: 2px solid rgba(0, 0, 0, .6854);
+    border-radius: 3px;
+    -webkit-transition: background .2s;
+    transition: background .2s;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+    outline: none;
+}
+
+input:focus,
+textarea:focus {
+    background-color: rgba(96, 125, 139, 0.2);
+}
+
+input[type="submit"] {
+    flex-grow: 0;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: #fff;
+    background-color: #FF6E40;
+    border: 3px solid #FF6E40;
+    -webkit-transition: all .3s;
+    transition: all .3s;
+}
+
+input[type="submit"]:hover {
+    cursor: pointer;
+    flex-grow: 1;
+    color: #FF3D00;
+    background-color: #fff;
+    border: 3px solid #FF3D00;
+}
+
+
+/* END FORM & INPUT ==========================================================================*/
+
+
 /*HEADER*/
 
 #header {
@@ -299,8 +363,8 @@ a {
 }
 
 .logo {
-    position: relative;
     display: inline-block;
+    position: relative;
     -webkit-box-flex: 0;
     -ms-flex-positive: 0;
     flex-grow: 0;
@@ -650,3 +714,66 @@ a {
 
 
 /* END 404 ==========================================================================*/
+
+
+/*About*/
+
+#page-about {
+    position: relative;
+    background-color: #fff;
+    width: 100%;
+}
+
+.history,
+.bill-quote {
+    justify-content: space-around;
+}
+
+.history div:first-child,
+.bill-quote div:last-child {
+    flex-grow: 1;
+    margin: 0 2em;
+    background-size: cover;
+    background-position: center;
+}
+
+.history div:last-child,
+.bill-quote div:first-child {
+    flex-grow: 0;
+    padding: 2em;
+}
+
+.history div:first-child {
+    background-image: url(images/hiking-glacier-200w-200h.jpg);
+}
+
+.history div:last-child {
+    width: 60%;
+}
+
+.bill-quote div:first-child {
+    width: 40%;
+}
+
+.bill-quote div:last-child {
+    height: 300px;
+    background-position: 50% 65%;
+    background-image: url(images/hiking-glacier-653w-490h.jpg);
+}
+
+.our-vision {}
+
+
+/* END About ==========================================================================*/
+
+
+/*Contact*/
+
+#page-contact {
+    position: relative;
+    background-color: #fff;
+    width: 100%;
+}
+
+
+/* END Contact ==========================================================================*/

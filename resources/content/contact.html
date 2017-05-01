@@ -1,5 +1,21 @@
 <div id="page-contact">
     <div class="wrapper">
-        <h2>Website under construction - we'll be up and running soon!</h2>
+        <form action="contact.php" method="post" class="center-block">
+            <div class="flex-container-row">
+                <input type="text" name="first-name" placeholder="First Name">
+                <input type="text" name="last-name" placeholder="Last Name">
+            </div>
+            <div class="flex-container-row">
+                <input type="email" name="email" placeholder="Email">
+                <input type="tel" name="phone" placeholder="Phone">
+                <input type="number" name="group-size" placeholder="Group Size">
+            </div>
+            <div class="flex-container-row">
+                <textarea name="message" cols="40" rows="10" placeholder="Comments or Questions"></textarea>
+            </div>
+            <div class="flex-container-row">
+                <input type="submit" value="Submit">
+            </div>
+        </form>
     </div>
 </div>
