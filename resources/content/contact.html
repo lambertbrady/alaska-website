@@ -1,17 +1,17 @@
 <div id="page-contact">
     <div class="wrapper">
-        <form action="contact.php" method="post" class="center-block">
+        <form name="contact" action="contact.php" method="post" onsubmit="validateForm(this)" class="center-block" novalidate>
             <div class="flex-container-row">
-                <input type="text" name="first-name" placeholder="First Name">
-                <input type="text" name="last-name" placeholder="Last Name">
+                <input type="text" name="first-name" placeholder="*First Name" required>
+                <input type="text" name="last-name" placeholder="*Last Name" required>
             </div>
             <div class="flex-container-row">
-                <input type="email" name="email" placeholder="Email">
+                <input type="email" name="email" placeholder="*Email" required>
                 <input type="tel" name="phone" placeholder="Phone">
-                <input type="number" name="group-size" placeholder="Group Size">
+                <input type="number" name="group-size" placeholder="*Group Size" min="1" required>
             </div>
             <div class="flex-container-row">
-                <textarea name="message" cols="40" rows="10" placeholder="Comments or Questions"></textarea>
+                <textarea name="comments" cols="40" rows="10" placeholder="Comments or Questions"></textarea>
             </div>
             <div class="flex-container-row">
                 <input type="submit" value="Submit">

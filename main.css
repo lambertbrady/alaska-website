@@ -320,6 +320,29 @@ input[type="submit"]:hover {
     border: 3px solid #FF3D00;
 }
 
+input:required, textarea:required, select:required {
+}
+
+input:invalid, textarea:invalid, selevt:invalid {
+    box-shadow: none;
+/*    border: 3px solid #FF3D00;*/
+}
+
+input:invalid:focus {
+    background-color: rgba(255, 110, 64, .2);
+}
+
+/*
+input:invalid {
+    background-color: rgba(255, 110, 64, .2);
+}
+*/
+
+form.submitted input:invalid {
+    background-color: rgba(255, 110, 64, .2);
+    border: 2px solid #FF3D00;
+}
+
 
 /* END FORM & INPUT ==========================================================================*/
 
