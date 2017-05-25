@@ -91,92 +91,97 @@ for (var i = 0; i < scrollBtnElements.length; i++) {
 //FORM VALIDATION//
 
 
-function validateEmail(email) {
-    return true;
-}
+//function validateEmail(email) {
+//    return true;
+//}
+//
+//function validateURL(url) {
+//    return true;
+//}
+//
+//function validateTel(tel) {
+//    return true;
+//}
+//
+//function validateNumber(number) {
+//    return true;
+//}
+//
+//function validateText(text) {
+//    return true;
+//}
+//
+//function validateTextarea(text) {
+//    return true;
+//}
+//
+//function validateRequired(field) {
+//    if (field.value == "") {
+//        return false;
+//    }
+//    return true;
+//}
+//
+//function updateValidity(field, valid) {
+//    if (valid == false) {
+//        field.classList.add("invalid");
+//    } else {
+//        if (field.classList.contains("invalid")) {
+//            field.classList.remove("invalid");
+//        }
+//    }
+//    return;
+//}
+//
+//function validateForm(form) {
+//    event.preventDefault();  ///////
+//    form.classList.add("submitted");
+//    for (var i = 0; i < form.elements.length; i++) {
+//        var valid;
+//        var message;
+//        var field = form.elements[i];
+//        if (field.classList.contains("required")) {
+//            valid = validateRequired(field);
+//            message = 'Please fill in the required field.';
+//            updateValidity(field, valid);
+//            //addMessage
+//            continue;
+//        }
+//        switch (field.type) {
+//            case "email":
+//                valid = validateEmail(field);
+//                message = 'fix email';
+//                break;
+//            case "URL":
+//                valid = validateURL(field);
+//                message = 'fix URL';
+//                break;
+//            case "tel":
+//                valid = validateTel(field);
+//                message = 'fix phone';
+//                break;
+//            case "number":
+//                valid = validateNumber(field);
+//                message = 'fix number';
+//                break;
+//            case "text":
+//                valid = validateText(field);
+//                message = 'fix text';
+//                break;
+//            case "textarea":
+//                valid = validateTextarea(field);
+//                message = 'fix textarea';
+//                break;
+//            //add something for <textarea>, which doesn't have a "type" attribute
+//        }
+//        updateValidity(field, valid);
+//    }
+//}
 
-function validateURL(url) {
-    return true;
-}
-
-function validateTel(tel) {
-    return true;
-}
-
-function validateNumber(number) {
-    return true;
-}
-
-function validateText(text) {
-    return true;
-}
-
-function validateTextarea(text) {
-    return true;
-}
-
-function validateRequired(field) {
-    if (field.value == "") {
-        return false;
-    }
-    return true;
-}
-
-function updateValidity(field, valid) {
-    if (valid == false) {
-        field.classList.add("invalid");
-    } else {
-        if (field.classList.contains("invalid")) {
-            field.classList.remove("invalid");
-        }
-    }
-    return;
-}
-
-function validateForm(form) {
-    event.preventDefault();  ///////
+function validateForm(form) {  //onsubmit
+    event.preventDefault();
     form.classList.add("submitted");
-    form.querySelectorAll("[required]");
-    for (var i = 0; i < form.elements.length; i++) {
-        var valid;
-        var message;
-        var field = form.elements[i];
-        if (field.classList.contains("required")) {
-            valid = validateRequired(field);
-            message = 'Please fill in the required field.';
-            updateValidity(field, valid);
-            //addMessage
-            continue;
-        }
-        switch (field.type) {
-            case "email":
-                valid = validateEmail(field);
-                message = 'fix email';
-                break;
-            case "URL":
-                valid = validateURL(field);
-                message = 'fix URL';
-                break;
-            case "tel":
-                valid = validateTel(field);
-                message = 'fix phone';
-                break;
-            case "number":
-                valid = validateNumber(field);
-                message = 'fix number';
-                break;
-            case "text":
-                valid = validateText(field);
-                message = 'fix text';
-                break;
-            case "textarea":
-                valid = validateTextarea(field);
-                message = 'fix textarea';
-                break;
-            //add something for <textarea>, which doesn't have a "type" attribute
-        }
-        updateValidity(field, valid);
-    }
+    form.querySelector(":invalid").focus();
 }
 
 //END FORM VALIDATION//

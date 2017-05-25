@@ -46,6 +46,15 @@ p {
     max-width: 60rem;
 }
 
+/*match default input styles set in normalize.css*/
+
+label {
+    font-family: sans-serif;
+    font-size: 100%;
+    line-height: 1.15;
+    margin: 0;
+    overflow: visible;
+}
 
 /*href="https://fonts.googleapis.com/css?family=Cabin:400,700"*/
 
@@ -259,7 +268,7 @@ a {
 /* END FLEX ==========================================================================*/
 
 
-/*FORM & INPUT*/
+/*FORMS*/
 
 form {
     position: relative;
@@ -270,49 +279,90 @@ form {
     line-height: 1.2222em;
 }
 
-form > .flex-container-row {
+form .flex-container-row {
     flex-wrap: wrap;
 }
 
-form > div:last-child {
+form .flex-container-row:last-child {
     justify-content: space-around;
 }
 
-input,
-textarea {
+form .flex-container-row div {
+    position: relative;
     flex-grow: 1;
     margin: 1rem 2%;
+}
+
+form label,
+form input,
+form textarea {
     padding: 1.1rem 1.5rem;
     border: 2px solid rgba(0, 0, 0, .6854);
     border-radius: 3px;
+}
+
+form label {
+    position: absolute;
+    overflow: hidden;
+    white-space: nowrap;
+    color: rgba(0, 0, 0, .54);
+/*    font-weight: bold;*/
+    width: 100%;
+    height: 100%;
+    border-color: transparent;
+    border-right: calc(1.5rem + 2px) solid transparent;
+/*    hides overflowing text on right edge, since "overflow: hidden" doesn't hide text on top of padding*/
+}
+
+form .required label:before {
+    content: "*";
+    position: relative;
+    font-weight: bold;
+}
+
+/*
+form .flex-container-row div input:focus + label {
+    color: aqua;
+}
+*/
+
+form input,
+form textarea {
+    background-color: transparent;
     -webkit-transition: background .2s;
     transition: background .2s;
 }
 
-input:focus,
-textarea:focus,
-select:focus {
+form label + input,
+form label + textarea {
+    position: relative;
+    width: 100%;
+}
+
+form input:focus,
+form textarea:focus,
+form select:focus {
     outline: none;
 }
 
-input:focus,
-textarea:focus {
+form label + input:focus,
+form label + textarea:focus {
     background-color: rgba(96, 125, 139, 0.2);
 }
 
-input[type="submit"] {
-    flex-grow: 0;
+form input[type="submit"] {
     font-weight: bold;
     text-transform: uppercase;
     color: #fff;
+    margin: 1rem 2%;
     background-color: #FF6E40;
     border: 3px solid #FF6E40;
     -webkit-transition: all .3s;
     transition: all .3s;
 }
 
-input[type="submit"]:focus,
-input[type="submit"]:hover {
+form input[type="submit"]:focus,
+form input[type="submit"]:hover {
     cursor: pointer;
     flex-grow: 1;
     color: #FF3D00;
@@ -320,20 +370,24 @@ input[type="submit"]:hover {
     border: 3px solid #FF3D00;
 }
 
-input:required, textarea:required, select:required {
+form input:required,
+form textarea:required,
+form select:required {
 }
 
-input:invalid, textarea:invalid, selevt:invalid {
+form input:invalid,
+form textarea:invalid,
+form select:invalid {
     box-shadow: none;
 /*    border: 3px solid #FF3D00;*/
 }
 
-input:invalid:focus {
+form input:invalid:focus {
     background-color: rgba(255, 110, 64, .2);
 }
 
 /*
-input:invalid {
+form input:invalid {
     background-color: rgba(255, 110, 64, .2);
 }
 */
@@ -343,8 +397,15 @@ form.submitted input:invalid {
     border: 2px solid #FF3D00;
 }
 
+/*
+form input:required {
+    background-color: aquamarine;
+}
+*/
 
-/* END FORM & INPUT ==========================================================================*/
+
+
+/* END FORMS ==========================================================================*/
 
 
 /*HEADER*/
@@ -364,9 +425,9 @@ form.submitted input:invalid {
 }
 
 .hero {
+    z-index: -1;
     width: 100%;
     position: fixed;
-    z-index: -1;
 }
 
 .hero-image {

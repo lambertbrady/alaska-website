@@ -2,16 +2,34 @@
     <div class="wrapper">
         <form name="contact" action="contact.php" method="post" onsubmit="validateForm(this)" class="center-block" novalidate>
             <div class="flex-container-row">
-                <input type="text" name="first-name" placeholder="*First Name" required>
-                <input type="text" name="last-name" placeholder="*Last Name" required>
+                <div class="required">
+                    <label for="row1-col1">First Name</label>
+                    <input id="row1-col1" type="text" name="first-name" required>
+                </div>
+                <div class="required">
+                    <label for="row1-col2">Last Name</label>
+                    <input id="row1-col2" type="text" name="last-name" required>
+                </div>
             </div>
             <div class="flex-container-row">
-                <input type="email" name="email" placeholder="*Email" required>
-                <input type="tel" name="phone" placeholder="Phone">
-                <input type="number" name="group-size" placeholder="*Group Size" min="1" required>
+                <div class="required">
+                    <label for="row2-col1">Email</label>
+                    <input id="row2-col1" type="email" name="email" required>
+                </div>
+                <div>
+                    <label for="row2-col2">Phone</label>
+                    <input id="row2-col2" type="tel" name="phone">
+                </div>
+                <div class="required">
+                    <label for="row2-col3">Group Size</label>
+                    <input id="row2-col3" type="number" name="group-size" required>
+                </div>
             </div>
             <div class="flex-container-row">
-                <textarea name="comments" cols="40" rows="10" placeholder="Comments or Questions"></textarea>
+                <div>
+                    <label for="row3-col1">Comments or Questions</label>
+                    <textarea id="row3-col1" name="comments" cols="40" rows="10"></textarea>
+                </div>
             </div>
             <div class="flex-container-row">
                 <input type="submit" value="Submit">
