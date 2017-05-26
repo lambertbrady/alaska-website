@@ -3,32 +3,32 @@
         <form name="contact" action="contact.php" method="post" onsubmit="validateForm(this)" class="center-block" novalidate>
             <div class="flex-container-row">
                 <div class="required">
-                    <label for="row1-col1">First Name</label>
                     <input id="row1-col1" type="text" name="first-name" required>
+                    <label for="row1-col1">First Name</label>
                 </div>
                 <div class="required">
-                    <label for="row1-col2">Last Name</label>
                     <input id="row1-col2" type="text" name="last-name" required>
+                    <label for="row1-col2">Last Name</label>
                 </div>
             </div>
             <div class="flex-container-row">
                 <div class="required">
-                    <label for="row2-col1">Email</label>
                     <input id="row2-col1" type="email" name="email" required>
+                    <label for="row2-col1">Email</label>
                 </div>
                 <div>
-                    <label for="row2-col2">Phone</label>
                     <input id="row2-col2" type="tel" name="phone">
+                    <label for="row2-col2">Phone</label>
                 </div>
                 <div class="required">
+                    <input id="row2-col3" type="number" name="group-size" min="1" required>
                     <label for="row2-col3">Group Size</label>
-                    <input id="row2-col3" type="number" name="group-size" required>
                 </div>
             </div>
             <div class="flex-container-row">
                 <div>
-                    <label for="row3-col1">Comments or Questions</label>
                     <textarea id="row3-col1" name="comments" cols="40" rows="10"></textarea>
+                    <label for="row3-col1">Comments or Questions</label>
                 </div>
             </div>
             <div class="flex-container-row">

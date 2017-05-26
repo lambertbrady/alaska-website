@@ -272,11 +272,13 @@ a {
 
 form {
     position: relative;
-    width: 100%;
-    max-width: 85rem;
     font-size: 1.8em;
     font-weight: normal;
     line-height: 1.2222em;
+    width: 100%;
+    max-width: 90rem;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
 }
 
 form .flex-container-row {
@@ -290,71 +292,33 @@ form .flex-container-row:last-child {
 form .flex-container-row div {
     position: relative;
     flex-grow: 1;
-    margin: 1rem 2%;
+    margin: 14px 2%;
 }
 
-form label,
 form input,
-form textarea {
-    padding: 1.1rem 1.5rem;
-    border: 2px solid rgba(0, 0, 0, .6854);
+form textarea,
+form label {
+    transition: all .3s ease-out;
     border-radius: 3px;
 }
 
-form label {
-    position: absolute;
-    overflow: hidden;
-    white-space: nowrap;
-    color: rgba(0, 0, 0, .54);
-/*    font-weight: bold;*/
-    width: 100%;
-    height: 100%;
-    border-color: transparent;
-    border-right: calc(1.5rem + 2px) solid transparent;
-/*    hides overflowing text on right edge, since "overflow: hidden" doesn't hide text on top of padding*/
-}
-
-form .required label:before {
-    content: "*";
-    position: relative;
-    font-weight: bold;
-}
-
-/*
-form .flex-container-row div input:focus + label {
-    color: aqua;
-}
-*/
-
 form input,
 form textarea {
-    background-color: transparent;
-    -webkit-transition: background .2s;
-    transition: background .2s;
-}
-
-form label + input,
-form label + textarea {
+    z-index: 1;
     position: relative;
     width: 100%;
-}
-
-form input:focus,
-form textarea:focus,
-form select:focus {
-    outline: none;
-}
-
-form label + input:focus,
-form label + textarea:focus {
-    background-color: rgba(96, 125, 139, 0.2);
+    padding: 14px 16px;
+    background-color: transparent;
+    border: 2px solid #4F4F4F;
 }
 
 form input[type="submit"] {
     font-weight: bold;
     text-transform: uppercase;
     color: #fff;
-    margin: 1rem 2%;
+    width: auto;
+    padding: 12px 16px;
+    margin: 10px 2%;
     background-color: #FF6E40;
     border: 3px solid #FF6E40;
     -webkit-transition: all .3s;
@@ -367,42 +331,68 @@ form input[type="submit"]:hover {
     flex-grow: 1;
     color: #FF3D00;
     background-color: #fff;
-    border: 3px solid #FF3D00;
-}
-
-form input:required,
-form textarea:required,
-form select:required {
+    border-color: #FF3D00;
 }
 
 form input:invalid,
 form textarea:invalid,
 form select:invalid {
     box-shadow: none;
-/*    border: 3px solid #FF3D00;*/
 }
 
-form input:invalid:focus {
-    background-color: rgba(255, 110, 64, .2);
+form input:focus,
+form textarea:focus,
+form select:focus {
+    outline: none;
+    border-color: #999999;
 }
 
-/*
-form input:invalid {
-    background-color: rgba(255, 110, 64, .2);
+form input:focus:invalid,
+form textarea:focus:invalid,
+form .not-empty:invalid {
+    border-color: #FF6E40;
 }
-*/
+
+form label {
+    position: absolute;
+    top: 0;
+    left: 0;
+    max-width: 100%;
+    padding: 16px 18px;  /*equal to (padding of input + border of input)*/
+    overflow: hidden;
+    white-space: nowrap;
+    color: rgba(0, 0, 0, .54);
+}
+
+form input:required + label:before,
+form textarea:required + label:before {
+    content: "*";
+    position: relative;
+    font-weight: bold;
+}
+
+
+form input:focus + label,
+form textarea:focus + label,
+form .not-empty + label {
+    z-index: 2;
+    color: #FFF;
+    padding: 4px 8px;
+    background-clip: padding-box;
+    background-color: #999999;
+    transform: translateY(-20px);
+}
+
+form input:focus:invalid + label,
+form textarea:focus:invalid + label,
+form .not-empty:invalid + label {
+    background-color: #FF6E40;
+}
 
 form.submitted input:invalid {
     background-color: rgba(255, 110, 64, .2);
-    border: 2px solid #FF3D00;
+    border-color: #FF3D00;
 }
-
-/*
-form input:required {
-    background-color: aquamarine;
-}
-*/
-
 
 
 /* END FORMS ==========================================================================*/

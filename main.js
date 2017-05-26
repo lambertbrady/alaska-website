@@ -184,4 +184,19 @@ function validateForm(form) {  //onsubmit
     form.querySelector(":invalid").focus();
 }
 
+function handleFormFieldInput(event) {
+    if (this.value != "") {
+        this.classList.add("not-empty");
+    } else {
+        this.classList.remove("not-empty");
+    }
+}
+
+var formFields = document.querySelectorAll("form input:not([type='submit']), form textarea");
+
+for (var i = 0; i < formFields.length; i++) {
+    formFields[i].addEventListener("input", handleFormFieldInput);
+}
+
+
 //END FORM VALIDATION//
