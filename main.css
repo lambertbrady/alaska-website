@@ -289,9 +289,9 @@ form .flex-container-row:last-child {
     justify-content: space-around;
 }
 
-form .flex-container-row div {
-    position: relative;
+form .flex-container-row > div {
     flex-grow: 1;
+    position: relative;
     margin: 14px 2%;
 }
 
@@ -305,44 +305,46 @@ form label {
 form input,
 form textarea {
     z-index: 1;
+    color: rgba(0, 0, 0, .6854);
     position: relative;
     width: 100%;
     padding: 14px 16px;
+/*    padding: 16px 16px 12px 16px;*/
     background-color: transparent;
     border: 1px solid #4F4F4F;
 }
 
 form input[type="submit"] {
+    font-size: 1.7rem;
     font-weight: bold;
     text-transform: uppercase;
     color: #fff;
     width: auto;
+/*    padding: 10px 14px;*/
     padding: 12px 16px;
     margin: 10px 2%;
     background-color: #FF6E40;
-    border: 3px solid #FF6E40;
+    border: 2px solid #FF6E40;
     -webkit-transition: all .3s;
     transition: all .3s;
 }
 
 form input[type="submit"]:focus,
 form input[type="submit"]:hover {
-    cursor: pointer;
     flex-grow: 1;
+    cursor: pointer;
     color: #FF3D00;
     background-color: #fff;
     border-color: #FF3D00;
 }
 
 form input:invalid,
-form textarea:invalid,
-form select:invalid {
+form textarea:invalid {
     box-shadow: none;
 }
 
 form input:focus,
-form textarea:focus,
-form select:focus {
+form textarea:focus {
     outline: none;
     border-color: #999999;
 }
@@ -363,7 +365,7 @@ form label {
 /*    padding equal to (padding of input + border of input)*/
     padding: 15px 17px 15px 0;
     margin-left: 17px;
-/*    padding: 16px 18px;*/
+/*    padding: 15px 17px;*/
     overflow: hidden;
     white-space: nowrap;
     color: rgba(0, 0, 0, .54);
@@ -376,19 +378,28 @@ form textarea:required + label:before {
     font-weight: bold;
 }
 
-
 form input:focus + label,
 form textarea:focus + label,
 form .not-empty + label {
     z-index: 2;
+    font-size: 1.6rem;
+/*    color: rgba(0, 0, 0, .6854);*/
 /*    color: #FFF;*/
     padding: 4px 8px;
     background-clip: padding-box;
-/*    background-color: #999999;*/
     background-color: #FFF;
-    border: 1px solid #999;
-    transform: translateY(-20px);
-/*    transform: translateY(-16px);*/
+/*    border: 1px solid #999999;*/
+    transform: translateY(-21px);
+/*    transform: translate3d(100px, -20px, 0);*/
+}
+
+form .not-empty + label {
+    border: 1px solid #4F4F4F;
+}
+
+form input:focus + label,
+form textarea:focus + label {
+    border: 1px solid #999999;
 }
 
 form input:focus:invalid + label,
@@ -398,79 +409,10 @@ form .not-empty:invalid + label {
     border-color: #FF6E40;
 }
 
-form.submitted input:invalid {
+form.submitted input:invalid,
+form.submitted textarea:invalid{
     background-color: rgba(255, 110, 64, .2);
     border-color: #FF3D00;
-}
-
-form .slider > div {
-    position: relative;
-}
-
-form .slider input,
-form .slider textarea,
-form .slider .flex-container {
-    transition: all .4s ease-out;
-}
-
-form .slider input,
-form .slider textarea {
-    z-index: 1;
-    position: relative;
-    width: 100%;
-    background-color: transparent;
-}
-
-form .slider .flex-container {
-    display: flex;
-    flex-flow: row nowrap;
-    position: absolute;
-    margin: 0;
-    top: 0;
-    left: 0;
-    width: 100%;
-}
-
-form .slider .flex-spacer,
-form .slider label {
-    flex-grow: 0;
-    position: relative;
-    margin: 0;
-    border-radius: inherit;
-    transition: inherit;
-}
-
-form .slider label {
-    padding: 15px 17px;
-}
-
-form .slider input:focus,
-form .slider textarea:focus {
-    border-color: #999;
-}
-
-form .slider input:focus + .flex-container .flex-spacer,
-form .slider textarea:focus + .flex-container .flex-spacer,
-form .slider input.not-empty + .flex-container .flex-spacer,
-form .slider textarea.not-empty + .flex-container .flex-spacer {
-    flex-grow: 1;
-}
-
-form .slider input:focus + .flex-container label,
-form .slider textarea:focus + .flex-container label {
-    z-index: 2;
-    color: #FFF;
-    background-color: #999;
-}
-
-form .slider input:focus:invalid,
-form .slider textarea:focus:invalid {
-    border-color: #FF6E40;
-}
-
-form .slider input:focus:invalid + .flex-container label,
-form .slider textarea:focus:invalid + .flex-container label {
-    background-color: #FF6E40;
 }
 
 
