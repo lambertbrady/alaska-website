@@ -2,33 +2,39 @@
     <div class="wrapper">
         <form name="contact" action="contact.php" method="post" onsubmit="validateForm(this)" class="center-block" novalidate>
             <div class="flex-container-row">
-                <div class="required">
-                    <input id="row1-col1" type="text" name="first-name" required>
-                    <label for="row1-col1">First Name</label>
+                <div class="form-field required">
+                    <input id="row1-field1" type="text" name="first-name" required>
+                    <label for="row1-field1">First Name</label>
+                    <div class="validation-message"></div>
                 </div>
-                <div class="required">
-                    <input id="row1-col2" type="text" name="last-name" required>
-                    <label for="row1-col2">Last Name</label>
-                </div>
-            </div>
-            <div class="flex-container-row">
-                <div class="required">
-                    <input id="row2-col1" type="email" name="email" required>
-                    <label for="row2-col1">Email</label>
-                </div>
-                <div>
-                    <input id="row2-col2" type="tel" name="phone">
-                    <label for="row2-col2">Phone</label>
-                </div>
-                <div class="required">
-                    <input id="row2-col3" type="number" name="group-size" min="1" required>
-                    <label for="row2-col3">Group Size</label>
+                <div class="form-field required">
+                    <input id="row1-field2" type="text" name="last-name" required>
+                    <label for="row1-field2">Last Name</label>
+                    <div class="validation-message"></div>
                 </div>
             </div>
             <div class="flex-container-row">
-                <div>
-                    <textarea id="row3-col1" name="comments" cols="40" rows="10"></textarea>
-                    <label for="row3-col1">Comments or Questions</label>
+                <div class="form-field required">
+                    <input id="row2-field1" type="email" name="email" required>
+                    <label for="row2-field1">Email</label>
+                    <div class="validation-message"></div>
+                </div>
+                <div class="form-field">
+                    <input id="row2-field2" type="tel" name="phone">
+                    <label for="row2-field2">Phone</label>
+                    <div class="validation-message"></div>
+                </div>
+                <div class="form-field required">
+                    <input id="row2-field3" type="number" name="group-size" min="1" required>
+                    <label for="row2-field3">Group Size</label>
+                    <div class="validation-message"></div>
+                </div>
+            </div>
+            <div class="flex-container-row">
+                <div class="form-field">
+                    <textarea id="row3-field1" name="comments" cols="40" rows="8"></textarea>
+                    <label for="row3-field1">Comments or Questions</label>
+                    <div class="validation-message"></div>
                 </div>
             </div>
             <div class="flex-container-row">

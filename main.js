@@ -75,7 +75,7 @@ function animateScroll(targetTop) {
 
 function runScroll(event) {
     event.preventDefault();
-    var targetID = event.target.getAttribute('href');
+    var targetID = event.target.getAttribute("href");
     var targetTop = document.querySelector(targetID).getBoundingClientRect().top; //number of pixels from viewport to top of target element
     animateScroll(targetTop);
 }
@@ -91,98 +91,7 @@ for (var i = 0; i < scrollBtnElements.length; i++) {
 //FORM VALIDATION//
 
 
-//function validateEmail(email) {
-//    return true;
-//}
-//
-//function validateURL(url) {
-//    return true;
-//}
-//
-//function validateTel(tel) {
-//    return true;
-//}
-//
-//function validateNumber(number) {
-//    return true;
-//}
-//
-//function validateText(text) {
-//    return true;
-//}
-//
-//function validateTextarea(text) {
-//    return true;
-//}
-//
-//function validateRequired(field) {
-//    if (field.value == "") {
-//        return false;
-//    }
-//    return true;
-//}
-//
-//function updateValidity(field, valid) {
-//    if (valid == false) {
-//        field.classList.add("invalid");
-//    } else {
-//        if (field.classList.contains("invalid")) {
-//            field.classList.remove("invalid");
-//        }
-//    }
-//    return;
-//}
-//
-//function validateForm(form) {
-//    event.preventDefault();  ///////
-//    form.classList.add("submitted");
-//    for (var i = 0; i < form.elements.length; i++) {
-//        var valid;
-//        var message;
-//        var field = form.elements[i];
-//        if (field.classList.contains("required")) {
-//            valid = validateRequired(field);
-//            message = 'Please fill in the required field.';
-//            updateValidity(field, valid);
-//            //addMessage
-//            continue;
-//        }
-//        switch (field.type) {
-//            case "email":
-//                valid = validateEmail(field);
-//                message = 'fix email';
-//                break;
-//            case "URL":
-//                valid = validateURL(field);
-//                message = 'fix URL';
-//                break;
-//            case "tel":
-//                valid = validateTel(field);
-//                message = 'fix phone';
-//                break;
-//            case "number":
-//                valid = validateNumber(field);
-//                message = 'fix number';
-//                break;
-//            case "text":
-//                valid = validateText(field);
-//                message = 'fix text';
-//                break;
-//            case "textarea":
-//                valid = validateTextarea(field);
-//                message = 'fix textarea';
-//                break;
-//            //add something for <textarea>, which doesn't have a "type" attribute
-//        }
-//        updateValidity(field, valid);
-//    }
-//}
-
-function validateForm(form) {  //onsubmit
-    event.preventDefault();
-    form.classList.add("submitted");
-    form.querySelector(":invalid").focus();
-}
+var formInputs = document.querySelectorAll("form input:not([type='submit']), form textarea");
 
 function handleFormFieldInput(event) {
     if (this.value != "") {
@@ -192,10 +101,30 @@ function handleFormFieldInput(event) {
     }
 }
 
-var formFields = document.querySelectorAll("form input:not([type='submit']), form textarea");
+for (var i = 0; i < formInputs.length; i++) {
+    formInputs[i].addEventListener("input", handleFormFieldInput);
+}
 
-for (var i = 0; i < formFields.length; i++) {
-    formFields[i].addEventListener("input", handleFormFieldInput);
+function focusScroll(focusEl, target) {
+    var xPos = window.scrollX;
+    var yPos = window.scrollY;
+    focusEl.focus();
+    window.scrollTo(xPos, yPos);
+    animateScroll(target);
+}
+
+function validateForm(form) {  //onsubmit
+    event.preventDefault();
+    form.classList.add("submitted");
+    for (var i = 0; i < (form.elements.length - 1); i++) { //omits submit button
+        form.elements[i].parentElement.querySelector(".validation-message").innerHTML = form.elements[i].validationMessage;
+    }
+    if (form.checkValidity() == false) {
+        var targetTop = form.querySelector(".form-field :invalid").getBoundingClientRect().top;
+        var elMarginTop = parseInt(window.getComputedStyle(form.querySelector(".form-field")).getPropertyValue("margin-top"),10);
+        var scrollTarget = targetTop - 2*elMarginTop;
+        focusScroll(form.querySelector(":invalid"), scrollTarget);
+    }
 }
 
 
