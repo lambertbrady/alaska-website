@@ -46,6 +46,15 @@ p {
     max-width: 60rem;
 }
 
+/*match default input styles set in normalize.css*/
+
+label {
+    font-family: sans-serif;
+    font-size: 100%;
+    line-height: 1.15;
+    margin: 0;
+    overflow: visible;
+}
 
 /*href="https://fonts.googleapis.com/css?family=Cabin:400,700"*/
 
@@ -259,6 +268,169 @@ a {
 /* END FLEX ==========================================================================*/
 
 
+/*FORMS*/
+
+form {
+    position: relative;
+    font-size: 1.8em;
+    font-weight: normal;
+    line-height: 1.2222em;
+    width: 100%;
+    max-width: 1024px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+form .flex-container-row {
+    flex-wrap: wrap;
+}
+
+form .flex-container-row:last-child {
+    justify-content: space-around;
+}
+
+form .form-field {
+    flex-grow: 1;
+    flex-basis: 200px;
+    position: relative;
+    margin: 15px 2%;
+}
+
+form input,
+form textarea,
+form label {
+    transition: all .3s ease-out;
+    border-radius: 3px;
+}
+
+form input,
+form textarea {
+    z-index: 1;
+    color: rgba(0, 0, 0, .87);
+    position: relative;
+    width: 100%;
+    padding: 14px 16px;
+    background-color: transparent;
+    border: 1px solid #4F4F4F;
+}
+
+form input[type="submit"] {
+    font-size: 1.7rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: #fff;
+    width: auto;
+    padding: 12px 16px;
+    margin: 10px 2%;
+    background-color: #FF6E40;
+    border: 2px solid #FF6E40;
+    -webkit-transition: all .3s;
+    transition: all .3s;
+}
+
+form input[type="submit"]:focus,
+form input[type="submit"]:hover {
+    flex-grow: 1;
+    cursor: pointer;
+    color: #FF3D00;
+    background-color: #fff;
+    border-color: #FF3D00;
+}
+
+form input:focus,
+form textarea:focus {
+    outline: none;
+    border-color: #999999;
+}
+
+
+form textarea {
+    line-height: 23px;
+}
+
+form label {
+    white-space: nowrap;
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    left: 0;
+    max-width: 100%;
+/*    padding equal to (padding of input + border of input)*/
+    padding: 15px 17px 15px 0;
+    margin-left: 17px;
+    color: rgba(0, 0, 0, .54);
+}
+
+form input:required + label:before,
+form textarea:required + label:before {
+    content: "*";
+    position: relative;
+    font-weight: bold;
+}
+
+form input:focus + label,
+form textarea:focus + label,
+form .not-empty + label {
+    z-index: 2;
+    font-size: 1.6rem;
+    padding: 4px 8px;
+    background-clip: padding-box;
+    background-color: #FFF;
+    transform: translateY(-21px);
+}
+
+form .not-empty + label {
+    border: 1px solid #4F4F4F;
+}
+
+form input:focus + label,
+form textarea:focus + label {
+    border: 1px solid #999999;
+}
+
+/*invalid*/
+
+form input:invalid,
+form textarea:invalid {
+    box-shadow: none;
+}
+
+form input:focus:invalid,
+form textarea:focus:invalid,
+form .not-empty:invalid {
+    border-color: #FF6E40;
+}
+
+form input:focus:invalid + label,
+form textarea:focus:invalid + label,
+form .not-empty:invalid + label {
+    border-color: #FF6E40;
+}
+
+/*submitted*/
+
+form.submitted input:invalid,
+form.submitted textarea:invalid{
+    background-color: rgba(255, 110, 64, .2);
+    border-color: #FF3D00;
+}
+
+/*validation message*/
+
+form .validation-message {
+    color: #F00;
+    padding-top: 10px;
+    padding-bottom: 5px;
+}
+
+form .validation-message:empty {
+    padding: 0;
+}
+
+
+/* END FORMS ==========================================================================*/
+
+
 /*HEADER*/
 
 #header {
@@ -276,9 +448,9 @@ a {
 }
 
 .hero {
+    z-index: -1;
     width: 100%;
     position: fixed;
-    z-index: -1;
 }
 
 .hero-image {
@@ -299,8 +471,8 @@ a {
 }
 
 .logo {
-    position: relative;
     display: inline-block;
+    position: relative;
     -webkit-box-flex: 0;
     -ms-flex-positive: 0;
     flex-grow: 0;
@@ -650,3 +822,66 @@ a {
 
 
 /* END 404 ==========================================================================*/
+
+
+/*About*/
+
+#page-about {
+    position: relative;
+    background-color: #fff;
+    width: 100%;
+}
+
+.history,
+.bill-quote {
+    justify-content: space-around;
+}
+
+.history div:first-child,
+.bill-quote div:last-child {
+    flex-grow: 1;
+    margin: 0 2em;
+    background-size: cover;
+    background-position: center;
+}
+
+.history div:last-child,
+.bill-quote div:first-child {
+    flex-grow: 0;
+    padding: 2em;
+}
+
+.history div:first-child {
+    background-image: url(images/hiking-glacier-200w-200h.jpg);
+}
+
+.history div:last-child {
+    width: 60%;
+}
+
+.bill-quote div:first-child {
+    width: 40%;
+}
+
+.bill-quote div:last-child {
+    height: 300px;
+    background-position: 50% 65%;
+    background-image: url(images/hiking-glacier-653w-490h.jpg);
+}
+
+.our-vision {}
+
+
+/* END About ==========================================================================*/
+
+
+/*Contact*/
+
+#page-contact {
+    position: relative;
+    background-color: #fff;
+    width: 100%;
+}
+
+
+/* END Contact ==========================================================================*/

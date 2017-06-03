@@ -1,6 +1,6 @@
-////////////////////
-//EASING FUNCTIONS//
-////////////////////
+//SMOOTH SCROLL//
+
+//--EASING FUNCTIONS//
 
 //Powers
 //Quadratic = 2
@@ -20,9 +20,8 @@ function easeInOutSine(time, duration) {
     return -(Math.cos(Math.PI * time / duration) - 1) / 2;
 }
 
-////////////////////////
-//END EASING FUNCTIONS//
-////////////////////////
+//--END EASING FUNCTIONS//
+
 
 function animateProperty(time, initialVal, finalVal, duration) {
     var factor = easeInOutSine(time, duration);
@@ -76,7 +75,7 @@ function animateScroll(targetTop) {
 
 function runScroll(event) {
     event.preventDefault();
-    var targetID = event.target.getAttribute('href');
+    var targetID = event.target.getAttribute("href");
     var targetTop = document.querySelector(targetID).getBoundingClientRect().top; //number of pixels from viewport to top of target element
     animateScroll(targetTop);
 }
@@ -85,3 +84,48 @@ var scrollBtnElements = document.querySelectorAll(".btn-scroll");
 for (var i = 0; i < scrollBtnElements.length; i++) {
     scrollBtnElements[i].addEventListener("click", runScroll, false);
 }
+
+
+//END SMOOTH SCROLL//
+
+//FORM VALIDATION//
+
+
+var formInputs = document.querySelectorAll("form input:not([type='submit']), form textarea");
+
+function handleFormFieldInput(event) {
+    if (this.value != "") {
+        this.classList.add("not-empty");
+    } else {
+        this.classList.remove("not-empty");
+    }
+}
+
+for (var i = 0; i < formInputs.length; i++) {
+    formInputs[i].addEventListener("input", handleFormFieldInput);
+}
+
+function focusScroll(focusEl, target) {
+    var xPos = window.scrollX;
+    var yPos = window.scrollY;
+    focusEl.focus();
+    window.scrollTo(xPos, yPos);
+    animateScroll(target);
+}
+
+function validateForm(form) {  //onsubmit
+    event.preventDefault();
+    form.classList.add("submitted");
+    for (var i = 0; i < (form.elements.length - 1); i++) { //omits submit button
+        form.elements[i].parentElement.querySelector(".validation-message").innerHTML = form.elements[i].validationMessage;
+    }
+    if (form.checkValidity() == false) {
+        var targetTop = form.querySelector(".form-field :invalid").getBoundingClientRect().top;
+        var elMarginTop = parseInt(window.getComputedStyle(form.querySelector(".form-field")).getPropertyValue("margin-top"),10);
+        var scrollTarget = targetTop - 2*elMarginTop;
+        focusScroll(form.querySelector(":invalid"), scrollTarget);
+    }
+}
+
+
+//END FORM VALIDATION//
