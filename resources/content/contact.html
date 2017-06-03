@@ -1,17 +1,41 @@
 <div id="page-contact">
     <div class="wrapper">
-        <form action="contact.php" method="post" class="center-block">
+        <form name="contact" action="contact.php" method="post" onsubmit="validateForm(this)" class="center-block" novalidate>
             <div class="flex-container-row">
-                <input type="text" name="first-name" placeholder="First Name">
-                <input type="text" name="last-name" placeholder="Last Name">
+                <div class="form-field required">
+                    <input id="row1-field1" type="text" name="first-name" required>
+                    <label for="row1-field1">First Name</label>
+                    <div class="validation-message"></div>
+                </div>
+                <div class="form-field required">
+                    <input id="row1-field2" type="text" name="last-name" required>
+                    <label for="row1-field2">Last Name</label>
+                    <div class="validation-message"></div>
+                </div>
             </div>
             <div class="flex-container-row">
-                <input type="email" name="email" placeholder="Email">
-                <input type="tel" name="phone" placeholder="Phone">
-                <input type="number" name="group-size" placeholder="Group Size">
+                <div class="form-field required">
+                    <input id="row2-field1" type="email" name="email" required>
+                    <label for="row2-field1">Email</label>
+                    <div class="validation-message"></div>
+                </div>
+                <div class="form-field">
+                    <input id="row2-field2" type="tel" name="phone">
+                    <label for="row2-field2">Phone</label>
+                    <div class="validation-message"></div>
+                </div>
+                <div class="form-field required">
+                    <input id="row2-field3" type="number" name="group-size" min="1" required>
+                    <label for="row2-field3">Group Size</label>
+                    <div class="validation-message"></div>
+                </div>
             </div>
             <div class="flex-container-row">
-                <textarea name="message" cols="40" rows="10" placeholder="Comments or Questions"></textarea>
+                <div class="form-field">
+                    <textarea id="row3-field1" name="comments" cols="40" rows="8"></textarea>
+                    <label for="row3-field1">Comments or Questions</label>
+                    <div class="validation-message"></div>
+                </div>
             </div>
             <div class="flex-container-row">
                 <input type="submit" value="Submit">

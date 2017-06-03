@@ -46,6 +46,15 @@ p {
     max-width: 60rem;
 }
 
+/*match default input styles set in normalize.css*/
+
+label {
+    font-family: sans-serif;
+    font-size: 100%;
+    line-height: 1.15;
+    margin: 0;
+    overflow: visible;
+}
 
 /*href="https://fonts.googleapis.com/css?family=Cabin:400,700"*/
 
@@ -259,68 +268,167 @@ a {
 /* END FLEX ==========================================================================*/
 
 
-/*FORM & INPUT*/
+/*FORMS*/
 
 form {
     position: relative;
-    width: 100%;
-    max-width: 85rem;
     font-size: 1.8em;
     font-weight: normal;
     line-height: 1.2222em;
+    width: 100%;
+    max-width: 1024px;
+    margin-top: 20px;
+    margin-bottom: 20px;
 }
 
-form > .flex-container-row {
+form .flex-container-row {
     flex-wrap: wrap;
 }
 
-form > div:last-child {
+form .flex-container-row:last-child {
     justify-content: space-around;
 }
 
-input,
-textarea {
+form .form-field {
     flex-grow: 1;
-    margin: 1rem 2%;
-    padding: 1.1rem 1.5rem;
-    border: 2px solid rgba(0, 0, 0, .6854);
+    flex-basis: 200px;
+    position: relative;
+    margin: 15px 2%;
+}
+
+form input,
+form textarea,
+form label {
+    transition: all .3s ease-out;
     border-radius: 3px;
-    -webkit-transition: background .2s;
-    transition: background .2s;
 }
 
-input:focus,
-textarea:focus,
-select:focus {
-    outline: none;
+form input,
+form textarea {
+    z-index: 1;
+    color: rgba(0, 0, 0, .87);
+    position: relative;
+    width: 100%;
+    padding: 14px 16px;
+    background-color: transparent;
+    border: 1px solid #4F4F4F;
 }
 
-input:focus,
-textarea:focus {
-    background-color: rgba(96, 125, 139, 0.2);
-}
-
-input[type="submit"] {
-    flex-grow: 0;
+form input[type="submit"] {
+    font-size: 1.7rem;
     font-weight: bold;
     text-transform: uppercase;
     color: #fff;
+    width: auto;
+    padding: 12px 16px;
+    margin: 10px 2%;
     background-color: #FF6E40;
-    border: 3px solid #FF6E40;
+    border: 2px solid #FF6E40;
     -webkit-transition: all .3s;
     transition: all .3s;
 }
 
-input[type="submit"]:hover {
-    cursor: pointer;
+form input[type="submit"]:focus,
+form input[type="submit"]:hover {
     flex-grow: 1;
+    cursor: pointer;
     color: #FF3D00;
     background-color: #fff;
-    border: 3px solid #FF3D00;
+    border-color: #FF3D00;
+}
+
+form input:focus,
+form textarea:focus {
+    outline: none;
+    border-color: #999999;
 }
 
 
-/* END FORM & INPUT ==========================================================================*/
+form textarea {
+    line-height: 23px;
+}
+
+form label {
+    white-space: nowrap;
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    left: 0;
+    max-width: 100%;
+/*    padding equal to (padding of input + border of input)*/
+    padding: 15px 17px 15px 0;
+    margin-left: 17px;
+    color: rgba(0, 0, 0, .54);
+}
+
+form input:required + label:before,
+form textarea:required + label:before {
+    content: "*";
+    position: relative;
+    font-weight: bold;
+}
+
+form input:focus + label,
+form textarea:focus + label,
+form .not-empty + label {
+    z-index: 2;
+    font-size: 1.6rem;
+    padding: 4px 8px;
+    background-clip: padding-box;
+    background-color: #FFF;
+    transform: translateY(-21px);
+}
+
+form .not-empty + label {
+    border: 1px solid #4F4F4F;
+}
+
+form input:focus + label,
+form textarea:focus + label {
+    border: 1px solid #999999;
+}
+
+/*invalid*/
+
+form input:invalid,
+form textarea:invalid {
+    box-shadow: none;
+}
+
+form input:focus:invalid,
+form textarea:focus:invalid,
+form .not-empty:invalid {
+    border-color: #FF6E40;
+}
+
+form input:focus:invalid + label,
+form textarea:focus:invalid + label,
+form .not-empty:invalid + label {
+    border-color: #FF6E40;
+}
+
+/*submitted*/
+
+form.submitted input:invalid,
+form.submitted textarea:invalid{
+    background-color: rgba(255, 110, 64, .2);
+    border-color: #FF3D00;
+}
+
+/*validation message*/
+
+form .validation-message {
+    color: #F00;
+    padding-top: 10px;
+    padding-bottom: 5px;
+}
+
+form .validation-message:empty {
+    padding: 0;
+}
+
+
+/* END FORMS ==========================================================================*/
 
 
 /*HEADER*/
@@ -340,9 +448,9 @@ input[type="submit"]:hover {
 }
 
 .hero {
+    z-index: -1;
     width: 100%;
     position: fixed;
-    z-index: -1;
 }
 
 .hero-image {
