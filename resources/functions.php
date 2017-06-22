@@ -13,7 +13,8 @@
 
 //VARIABLES//
 
-$page_paths = ['about','activities','destination','planning','gallery','contact'];
+//$page_paths = ['about','activities','destination','planning','gallery','contact'];
+$page_paths = ['contact'];
 //paths available in URL for users to access
 //NOTE: order of values in array determines order of items listed in header and footer navigation; error pages not included
 
